@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, CheckCircle2, Target, Lightbulb, TrendingUp } from 'lucide-react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all case studies
@@ -22,7 +22,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for each case study
 export async function generateMetadata({ params }: PageProps) {
-  const study = getCaseStudyBySlug(params.slug);
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug);
   
   if (!study) {
     return {
@@ -41,8 +42,9 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function CaseStudyPage({ params }: PageProps) {
-  const study = getCaseStudyBySlug(params.slug);
+export default async function CaseStudyPage({ params }: PageProps) {
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug);
 
   if (!study) {
     notFound();
