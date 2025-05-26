@@ -11,6 +11,11 @@ export interface ServiceStats {
   value: string
 }
 
+export interface ServiceFAQ {
+  question: string
+  answer: string
+}
+
 export interface ServiceInfo {
   title: string
   subtitle: string
@@ -21,6 +26,7 @@ export interface ServiceInfo {
   process: ServiceProcess[]
   stats: ServiceStats
   features: string[]
+  faqs: ServiceFAQ[] // New FAQ property
 }
 
 export type ServiceSlug = 
@@ -62,6 +68,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Mobile-first optimisation',
       'Load board integration',
       'Voice search optimisation'
+    ],
+    faqs: [
+      {
+        question: "How long does trucking SEO take to show results?",
+        answer: "Most trucking companies start seeing initial ranking improvements within 60-90 days, with significant lead increases by month 4-6. SEO is a long-term strategy that builds momentum over time."
+      },
+      {
+        question: "Can you help us rank for specific trucking routes?",
+        answer: "Absolutely! We specialize in route-based SEO, helping you rank for searches like 'trucking from Chicago to Atlanta' or 'freight shipping to California'. This targets shippers with specific lane needs."
+      },
+      {
+        question: "What if we operate in multiple states?",
+        answer: "We optimize for multi-state operations by creating location-specific pages and local SEO strategies for each terminal or major operating area, ensuring you're found wherever you operate."
+      }
     ]
   },
   'logistics-lead-generation': {
@@ -90,6 +110,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Landing page optimisation',
       'Lead scoring system',
       'Real-time reporting dashboard'
+    ],
+    faqs: [
+      {
+        question: "How do you ensure leads are qualified for our specific services?",
+        answer: "We create detailed shipper profiles based on your preferred lanes, freight types, and volume requirements. Our qualification process includes shipping frequency, budget verification, and decision-maker identification before leads reach you."
+      },
+      {
+        question: "What's the difference between this and load boards?",
+        answer: "Load boards are transactional and competitive. Our lead generation creates direct relationships with shippers who need consistent capacity, leading to better rates, regular lanes, and long-term contracts rather than one-off loads."
+      },
+      {
+        question: "How quickly can we expect to see qualified leads?",
+        answer: "Most trucking companies start receiving qualified leads within 2-3 weeks of campaign launch. We typically generate 50-200 leads per month, depending on your capacity and target market size."
+      }
     ]
   },
   'website-development': {
@@ -118,6 +152,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Load tracking integration',
       'Customer portal access',
       'Mobile-responsive design'
+    ],
+    faqs: [
+      {
+        question: "How long does it take to build a trucking website?",
+        answer: "Most trucking websites take 4-8 weeks from start to launch, depending on complexity and integrations. We work around your schedule and keep you involved throughout the process to ensure the site meets your exact needs."
+      },
+      {
+        question: "Can you integrate our website with our existing TMS system?",
+        answer: "Yes, we specialize in integrating trucking websites with popular TMS platforms, load tracking systems, and customer portals. This allows real-time shipment tracking and seamless customer communication."
+      },
+      {
+        question: "Will our website work well on mobile devices?",
+        answer: "Absolutely. All our trucking websites are mobile-first, ensuring they work perfectly on smartphones and tablets. This is crucial since many shippers and drivers access websites from mobile devices."
+      }
     ]
   },
   'ppc-for-haulage': {
@@ -146,6 +194,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Geo-targeted campaigns',
       'Negative keyword optimisation',
       'A/B testing framework'
+    ],
+    faqs: [
+      {
+        question: "How quickly can PPC campaigns start generating leads?",
+        answer: "PPC campaigns can start generating leads within 24-48 hours of launch. Unlike SEO, paid ads provide immediate visibility, making them perfect for trucking companies that need leads quickly or want to test new markets."
+      },
+      {
+        question: "What's a good budget to start with for trucking PPC?",
+        answer: "Most successful trucking PPC campaigns start with $2,000-5,000 per month, depending on your target markets and competition. We optimize spending to focus on your most profitable lanes and freight types for maximum ROI."
+      },
+      {
+        question: "Can you target ads to specific shipping lanes?",
+        answer: "Yes! We create highly targeted campaigns for specific routes like 'Chicago to Los Angeles trucking' or 'Northeast freight shipping'. This ensures your ads reach shippers with loads on your preferred lanes."
+      }
     ]
   },
   'analytics-reporting': {
@@ -174,6 +236,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Competitor analysis',
       'Lead source tracking',
       'Revenue attribution'
+    ],
+    faqs: [
+      {
+        question: "What metrics should trucking companies track?",
+        answer: "Key metrics include cost per lead, lead-to-customer conversion rate, customer acquisition cost, lifetime value, and ROI by marketing channel. We also track trucking-specific metrics like leads by lane and freight type."
+      },
+      {
+        question: "How often will we receive performance reports?",
+        answer: "You'll receive automated weekly performance summaries and comprehensive monthly reports. Plus, you have 24/7 access to real-time dashboards showing your marketing performance and lead generation metrics."
+      },
+      {
+        question: "Can you track phone calls from our marketing?",
+        answer: "Absolutely. We implement call tracking to monitor which marketing channels generate phone inquiries. This is crucial for trucking companies since many shippers prefer to call rather than fill out forms."
+      }
     ]
   },
   'content-capture': {
@@ -202,6 +278,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Social media content',
       'Lead magnet creation',
       'Infographic design'
+    ],
+    faqs: [
+      {
+        question: "Do you film at our facilities and with our trucks?",
+        answer: "Yes, we come to your location to film your actual fleet, drivers, and operations. This authentic content builds more trust than stock footage and showcases your real capabilities to potential customers."
+      },
+      {
+        question: "What types of content work best for trucking companies?",
+        answer: "Driver testimonials, fleet showcase videos, behind-the-scenes operations content, and educational content about your services perform best. We also create case studies and customer success stories that build credibility."
+      },
+      {
+        question: "How do you minimize disruption to our operations?",
+        answer: "We work around your schedule and operations. Most filming can be done during routine activities without disrupting workflows. We're experienced in working around active trucking operations safely and efficiently."
+      }
     ]
   },
   'social-media-management': {
@@ -230,6 +320,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Social media advertising',
       'Performance analytics',
       'Reputation monitoring'
+    ],
+    faqs: [
+      {
+        question: "Which social media platforms work best for trucking companies?",
+        answer: "LinkedIn is excellent for B2B lead generation and connecting with shippers. Facebook works well for driver recruitment and community building. Instagram showcases your fleet visually. We recommend focusing on 2-3 platforms initially."
+      },
+      {
+        question: "How often should trucking companies post on social media?",
+        answer: "We typically recommend 3-5 posts per week on primary platforms, with daily engagement and monitoring. Consistency is more important than frequency - we create sustainable posting schedules that maintain quality content."
+      },
+      {
+        question: "Can social media actually generate leads for trucking companies?",
+        answer: "Absolutely! LinkedIn is particularly effective for B2B lead generation, while Facebook and Instagram build brand awareness that supports other marketing efforts. We've seen trucking companies generate significant leads through strategic social media marketing."
+      }
     ]
   },
   'email-marketing': {
@@ -258,6 +362,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Performance tracking',
       'A/B testing',
       'Deliverability optimization'
+    ],
+    faqs: [
+      {
+        question: "How do we build an email list of potential shippers?",
+        answer: "We use lead magnets like freight calculators, shipping guides, and market reports to attract shippers. We also implement opt-in forms on your website and create valuable content that encourages subscriptions from your target audience."
+      },
+      {
+        question: "What types of emails work best for trucking companies?",
+        answer: "Educational content about shipping best practices, market updates, case studies, and service spotlights perform well. We also create automated sequences for new leads and regular newsletters that keep you top-of-mind with prospects."
+      },
+      {
+        question: "How do you ensure our emails don't end up in spam folders?",
+        answer: "We follow email deliverability best practices including proper authentication, clean list management, engaging content, and monitoring sender reputation. Our goal is to maintain high deliverability rates and inbox placement."
+      }
     ]
   },
   'digital-reputation-management': {
@@ -286,6 +404,20 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       'Positive review generation',
       'Social media monitoring',
       'Reputation reporting'
+    ],
+    faqs: [
+      {
+        question: "Why is online reputation important for trucking companies?",
+        answer: "Shippers research trucking companies online before making decisions. A strong online reputation builds trust, differentiates you from competitors, and can significantly impact your ability to win new business and attract quality drivers."
+      },
+      {
+        question: "How do you handle negative reviews or complaints?",
+        answer: "We respond professionally and promptly to address concerns, demonstrate your commitment to customer service, and work to resolve issues offline when possible. Our goal is to turn negative experiences into positive outcomes."
+      },
+      {
+        question: "Can you help us get more positive reviews?",
+        answer: "Yes, we implement review generation strategies that encourage satisfied customers to leave positive feedback. This includes automated follow-up emails, review request campaigns, and making it easy for happy customers to share their experiences."
+      }
     ]
   }
 };

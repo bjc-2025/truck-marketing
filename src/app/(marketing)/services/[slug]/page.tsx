@@ -122,10 +122,6 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
                 Get Your Free Strategy Session
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg">
-                <Phone className="mr-2 h-5 w-5" />
-                Call (555) 123-4567
-              </Button>
             </div>
           </div>
         </div>
@@ -291,17 +287,7 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="py-12 bg-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="flex items-center gap-2"><Shield className="h-8 w-8 text-green-600" /><div><p className="font-semibold">150+ Trucking Clients</p><p className="text-sm text-gray-600">Nationwide</p></div></div>
-            <div className="flex items-center gap-2"><TrendingUp className="h-8 w-8 text-blue-600" /><div><p className="font-semibold">5+ Years</p><p className="text-sm text-gray-600">Industry Focus</p></div></div>
-            <div className="flex items-center gap-2"><Users className="h-8 w-8 text-purple-600" /><div><p className="font-semibold">300% Avg Growth</p><p className="text-sm text-gray-600">Client Results</p></div></div>
-            <div className="flex items-center gap-2"><BarChart3 className="h-8 w-8 text-orange-600" /><div><p className="font-semibold">98% Retention</p><p className="text-sm text-gray-600">Client Satisfaction</p></div></div>
-          </div>
-        </div>
-      </section>
+     
     </div>
   )
 }
