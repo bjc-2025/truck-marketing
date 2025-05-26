@@ -2,20 +2,240 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Trucking brand color scheme - Professional blue primary */
+    --background: 0 0% 100%;
+    --foreground: 218 54% 20%; /* Deep blue-gray for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 218 54% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 54% 20%;
+
+    /* Primary: Deep Oxford Blue */
+    --primary: 218 100% 15%; /* #0a2463 */
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary: Light neutral */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 218 54% 20%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent: Trucking orange for CTAs */
+    --accent: 25 95% 53%; /* #f39c12 */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 25 95% 53%; /* Orange ring */
+
+    /* Chart colors for data visualization */
+    --chart-1: 218 100% 15%; /* Primary blue */
+    --chart-2: 25 95% 53%; /* Primary orange */
+    --chart-3: 0 0% 20%; /* Black accent */
+    --chart-4: 221 83% 53%; /* Info blue */
+    --chart-5: 262 83% 58%; /* Purple accent */
+
+    --radius: 0.5rem
+  }
+  .dark {
+
+    --background: 0 0% 3.9%;
+
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+
+    --input: 0 0% 14.9%;
+
+    --ring: 0 0% 83.1%;
+
+    --chart-1: 220 70% 50%;
+
+    --chart-2: 160 60% 45%;
+
+    --chart-3: 30 80% 55%;
+
+    --chart-4: 280 65% 60%;
+
+    --chart-5: 340 75% 55%
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+  
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer components {
+  /* Container patterns */
+  .container-narrow {
+    @apply container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-wide {
+    @apply container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  
+  .section-padding-sm {
+    @apply py-12 sm:py-16;
+  }
+  
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, theme('colors.truck-blue.950') 0%, theme('colors.truck-blue.800') 100%);
+  }
+  
+  .gradient-cta {
+    background: linear-gradient(135deg, theme('colors.truck-orange.600') 0%, theme('colors.truck-orange.500') 100%);
+  }
+  
+  /* Card elevation styles */
+  .card-elevation-sm {
+    @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-elevation-md {
+    @apply shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .card-elevation-lg {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-200;
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-colors;
+  }
+  
+  .btn-truck-orange {
+    @apply bg-truck-orange-600 text-white hover:bg-truck-orange-700 transition-colors;
+  }
+  
+  .btn-truck-black {
+    @apply bg-gray-900 text-white hover:bg-black transition-colors;
+  }
+  
+  /* Truck Silhouette Navigation */
+  .truck-nav-shape {
+    position: relative;
+    min-height: 60px;
+    /* Subtle truck silhouette with asymmetric rounded corners */
+    border-radius: 12px 32px 32px 12px;
+    /* Add a subtle gradient to enhance the truck cab appearance */
+    background-image: 
+      linear-gradient(90deg, 
+        rgba(var(--primary), 0.03) 0%, 
+        rgba(var(--primary), 0.01) 25%, 
+        rgba(var(--primary), 0.01) 75%, 
+        rgba(var(--primary), 0.03) 100%
+      );
+  }
+  
+  /* Alternative simpler truck shape */
+  .truck-nav-shape-simple {
+    position: relative;
+    border-radius: 8px 24px 24px 8px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      currentColor 10%, 
+      currentColor 90%, 
+      transparent 100%
+    );
+  }
+  
+  /* Truck outline effects */
+  .truck-nav-shape::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 14px;
+    background: linear-gradient(45deg, 
+      rgba(var(--primary), 0.08) 0%, 
+      rgba(var(--primary), 0.04) 100%
+    );
+    border-radius: 3px 8px 8px 3px;
+    /* Truck cab silhouette */
+  }
+  
+  .truck-nav-shape::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 10px;
+    background: linear-gradient(45deg, 
+      rgba(var(--primary), 0.04) 0%, 
+      rgba(var(--primary), 0.08) 100%
+    );
+    border-radius: 2px 6px 6px 2px;
+    /* Truck trailer silhouette */
+  }
 }
