@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, CheckCircle2, Target, Lightbulb, TrendingUp } from 'lucide-react';
 
 interface PageProps {
@@ -167,10 +166,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {/* Challenges Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-red-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-orange-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <Target className="w-12 h-12 text-red-600 mx-auto mb-4" />
+            <Target className="w-12 h-12 text-orange-600 mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Challenges We Addressed</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Every successful project starts with understanding the obstacles and pain points that need to be overcome.
@@ -181,8 +180,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
             {study.challenges.map((challenge) => (
               <div key={challenge.id} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                    <span className="text-red-600 font-bold text-sm">{challenge.id}</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                    <span className="text-orange-600 font-bold text-sm">{challenge.id}</span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">{challenge.title}</h3>
@@ -207,7 +206,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </div>
           
           <div className="space-y-8">
-            {study.approach.map((section, index) => (
+            {study.approach.map((section,) => (
               <div key={section.id} className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                   <div className="lg:col-span-1">
@@ -225,7 +224,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       <ul className="space-y-2">
                         {section.bullets.map((bullet, bulletIndex) => (
                           <li key={bulletIndex} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                            <CheckCircle2 className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-600">{bullet}</span>
                           </li>
                         ))}
@@ -240,10 +239,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {/* Results Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-green-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-orange-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <TrendingUp className="w-12 h-12 text-green-600 mx-auto mb-4" />
+            <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Measurable Results</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               The tangible outcomes and improvements achieved through our strategic partnership.
@@ -252,9 +251,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
           
           <div className="grid md:grid-cols-2 gap-8">
             {study.results.map((result) => (
-              <div key={result.id} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-green-500">
+              <div key={result.id} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-orange-500">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-green-600" />
+                  <CheckCircle2 className="w-6 h-6 text-orange-600" />
                   {result.title}
                 </h3>
                 <p className="text-gray-600">{result.description}</p>
@@ -293,38 +292,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            {study.callToAction.title}
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            {study.callToAction.description}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={study.callToAction.primaryButton.link}>
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-50 px-8 py-4 text-lg font-semibold">
-                {study.callToAction.primaryButton.text}
-                <ExternalLink className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            
-            {study.callToAction.secondaryButton && (
-              <Link href={study.callToAction.secondaryButton.link}>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg font-semibold"
-                >
-                  {study.callToAction.secondaryButton.text}
-                </Button>
-              </Link>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* Related Case Studies */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-t">

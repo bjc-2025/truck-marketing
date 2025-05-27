@@ -7,8 +7,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Phone, Mail, Calendar, TrendingUp, Shield, Clock, Target, Users, BarChart3 } from "lucide-react"
-import { serviceData, ServiceSlug, ServiceInfo, ServiceProcess } from '@/data/servicesData'; 
+import { ArrowRight, CheckCircle2,  Mail, Calendar, } from "lucide-react"
+import { serviceData, ServiceSlug, ServiceProcess } from '@/data/servicesData'; 
 
 interface ServicePageProps {
   params: {
@@ -219,7 +219,7 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg mb-6 text-gray-300">
-                  "TruckMarketing transformed our online presence. We went from invisible to ranking #1 for our key routes. Our phone hasnt stopped ringing with quality loads."
+                 TruckMarketing transformed our online presence. We went from invisible to ranking #1 for our key routes. Our phone hasnt stopped ringing with quality loads.
                 </p>
                 <p className="font-semibold">Mike Thompson</p>
                 <p className="text-gray-400">CEO, Thompson Transport LLC</p>

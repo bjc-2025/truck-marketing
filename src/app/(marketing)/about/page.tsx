@@ -181,7 +181,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Personal Service</h3>
                 <p className="text-gray-600">
-                  You're not just another client number. You get direct access to our team and personalized strategies for your unique business.
+                  Youre not just another client number. You get direct access to our team and personalized strategies for your unique business.
                 </p>
               </div>
 

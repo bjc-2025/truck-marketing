@@ -395,6 +395,11 @@ export const caseStudies: CaseStudy[] = [
         id: 3,
         title: 'Ineffective Audience Reach',
         description: 'The company needed to reach their audience more effectively and showcase their expertise across mining, defence, and agriculture transportation sectors.'
+      },
+      {
+        id: 4,
+        title: 'Brand Building and Awareness',
+        description: 'Dawson\'s Haulage sought to build a stronger brand presence that resonated with both existing and potential clients, particularly in the competitive transport industry.'
       }
     ],
     approach: [
@@ -428,6 +433,16 @@ export const caseStudies: CaseStudy[] = [
           'Blog posts about the transport industry and its role in various sectors',
           'Informative pages detailing their fleet and services',
           'Visual content for social media, including photos, videos, and infographics'
+        ]
+      },
+      {
+        id: 4,
+        title: 'Digital Advertising',
+        description: 'We implemented targeted digital advertising campaigns to increase brand visibility and reach potential clients.',
+        bullets: [
+          'Google Ads campaigns focused on transport services and community initiatives',
+          'Social media ads to promote brand awareness and engagement',
+          'Regular performance analysis to optimise ad spend and reach'
         ]
       }
     ],

@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { 
   Select, 
   SelectContent, 
@@ -18,14 +17,11 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { 
   Phone, 
   Mail, 
-  MapPin, 
   Clock, 
   Send, 
   CheckCircle, 
   AlertCircle,
   Truck,
-  Package,
-  Globe
 } from "lucide-react"
 
 interface ContactFormProps {
@@ -129,7 +125,7 @@ export function ContactForm({
       <div>
         <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
           <Truck className="h-5 w-5 text-primary" />
-          Let's Drive Results Together
+          Lets Drive Results Together
         </h3>
         <p className="text-muted-foreground mb-6">
           Ready to accelerate your trucking business? Our marketing specialists are standing by to help.
@@ -190,7 +186,7 @@ export function ContactForm({
           <div className="flex items-center gap-2">
             <CheckCircle className="h-5 w-5 text-truck-orange-600" />
             <span className="font-medium text-truck-orange-800">
-              Thank you! We'll be in touch within 2 business hours.
+              Thank you! Well be in touch within 2 business hours.
             </span>
           </div>
         </div>
@@ -330,7 +326,7 @@ export function ContactForm({
       </Button>
       
       <p className="text-xs text-center text-muted-foreground">
-        By submitting this form, you agree to our privacy policy. We'll never spam you.
+        By submitting this form, you agree to our privacy policy. Well never spam you.
       </p>
     </form>
   )
