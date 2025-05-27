@@ -71,7 +71,6 @@ const quickLinks = [
   { title: "About Us", href: "/about" },
   { title: "Case Studies", href: "/case-studies" },
   { title: "Blog", href: "/blog" },
-  { title: "Contact", href: "/contact" },
   { title: "Free Strategy Session", href: "/contact" }
 ]
 
@@ -133,8 +132,8 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-6">Our Services</h3>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.href}>
+              {services.map((service, index) => (
+                <li key={`footer-service-${index}`}>
                   <Link 
                     href={service.href}
                     className="flex items-center gap-2 text-gray-300 hover:text-truck-orange-500 transition-colors text-sm group"
@@ -151,8 +150,8 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
+              {quickLinks.map((link, index) => (
+                <li key={`footer-quick-${index}`}>
                   <Link 
                     href={link.href}
                     className="text-gray-300 hover:text-truck-orange-500 transition-colors text-sm flex items-center gap-2 group"
@@ -193,9 +192,9 @@ export default function Footer() {
             <div>
               <p className="text-gray-300 text-sm mb-4">Follow us on social media</p>
               <div className="flex gap-3">
-                {socialLinks.map((social) => (
+                {socialLinks.map((social, index) => (
                   <a
-                    key={social.title}
+                    key={`footer-social-${index}`}
                     href={social.href}
                     className="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-truck-orange-500 rounded-lg transition-colors group"
                     aria-label={social.title}
@@ -223,7 +222,7 @@ export default function Footer() {
             {/* Legal Links */}
             <div className="flex items-center gap-6">
               {legalLinks.map((link, index) => (
-                <div key={link.href} className="flex items-center gap-6">
+                <div key={`footer-legal-${index}`} className="flex items-center gap-6">
                   <Link 
                     href={link.href}
                     className="text-gray-400 hover:text-truck-orange-500 transition-colors text-sm"

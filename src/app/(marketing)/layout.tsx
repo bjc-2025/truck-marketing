@@ -1,5 +1,5 @@
 import Footer from '@/components/layout/footer';
-import { Navbar } from '@/components/layout/floating-nav';
+import { Navbar } from '@/components/layout/header';
 
 export default function MarketingLayout({
   children,

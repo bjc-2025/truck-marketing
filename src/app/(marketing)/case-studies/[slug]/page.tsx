@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ExternalLink, CheckCircle2, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Target, Lightbulb, TrendingUp } from 'lucide-react';
 
 interface PageProps {
   params: Promise<{

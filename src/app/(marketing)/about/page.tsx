@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from "@/components/ui/button"
+
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle, MapPin, Zap, Target, DollarSign, Users } from "lucide-react"
+import TeamSection from "@/components/sections/team-section"
+import { ContactCTA } from "@/components/sections/cta-section"
+import { CheckCircle, MapPin, Zap, Target, DollarSign, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: 'About Us - Truck Marketing',
@@ -77,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <div className="container-wide section-padding">
+      <div className="   section-padding">
         
         {/* Our Story Section */}
         <section className="mb-16">
@@ -99,8 +100,7 @@ export default function AboutPage() {
 
         {/* Team Photo Section */}
         <section className="mb-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Meet the Team</h2>
+          <div className="max-w-6xl mx-auto text-center">
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
               <div className="relative w-full max-w-3xl mx-auto mb-6 rounded-lg overflow-hidden">
                 <Image 
@@ -190,7 +190,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission Section */}
-        <section className="relative overflow-hidden rounded-2xl mb-16">
+        <section className="container-wide relative overflow-hidden rounded-2xl mb-16">
           {/* Background with overlay */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -208,37 +208,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        <section className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Shift Your Marketing into High Gear?</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Lets talk about how we can help your trucking company reach new destinations and achieve the growth you deserve.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-6 h-auto"
-              asChild
-            >
-              <Link href="/contact">
-                Get Your Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="text-lg px-8 py-6 h-auto"
-              asChild
-            >
-              <Link href="/case-studies">
-                View Our Work
-              </Link>
-            </Button>
-          </div>
-        </section>
 
+        <TeamSection />
+
+        {/* Call to Action Section */}
+        <ContactCTA />
+  
       </div>
     </div>
   )
