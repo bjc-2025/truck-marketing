@@ -6,33 +6,45 @@ import TeamSection from "@/components/sections/team-section"
 import { ContactCTA } from "@/components/sections/cta-section"
 import { CheckCircle, MapPin, Zap, Target, DollarSign, Users } from "lucide-react"
 
+const cloudinaryOgImageUrl = 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp';
+const cloudinaryTwitterImageUrl = 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp'; // Example: Twitter might prefer a slightly different crop or size
+
 export const metadata: Metadata = {
   title: 'About Us - Truck Marketing',
+  description: 'Learn about Truck Marketing and our mission to help trucking companies grow their business.',
   openGraph: {
     title: 'About Us - Truck Marketing',
     description: 'Learn about Truck Marketing and our mission to help trucking companies grow their business.',
-    url: 'https://www.truckmarketing.com/about',
+    url: 'https://www.truckmarketing.com/about', // Your page's canonical URL
     siteName: 'Truck Marketing',
     images: [
       {
-        url: 'https://www.truckmarketing.com/images/about-banner.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'About Truck Marketing',
+        url: cloudinaryOgImageUrl, // <-- USE CLOUDINARY URL HERE
+        width: 1200,             // Should match the w_1200 in the Cloudinary URL
+        height: 630,             // Should match the h_630 in the Cloudinary URL
+        alt: 'About Truck Marketing - Driving Success',
       },
+      // You could add more images if desired, e.g., different aspect ratios
     ],
+    type: 'website', // Good to specify
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Us - Truck Marketing',
     description: 'Learn about Truck Marketing and our mission to help trucking companies grow their business.',
-    images: ['https://www.truckmarketing.com/images/about-banner.jpg'],
+    // site: '@YourTwitterHandle', // Optional: your site's Twitter handle
+    // creator: '@CreatorTwitterHandle', // Optional: content creator's Twitter handle
+    images: [cloudinaryTwitterImageUrl], // <-- USE CLOUDINARY URL HERE
   },
-  keywords: ['trucking', 'marketing', 'business growth', 'logistics', 'transportation'],
+  keywords: ['trucking', 'marketing', 'business growth', 'logistics', 'transportation', 'truck marketing agency'],
   robots: {
     index: true,
     follow: true,
-  },    
+  },
+  // Optional: Add a canonical URL if this page can be reached via multiple URLs
+  alternates: {
+    canonical: 'https://www.truckmarketing.com/about',
+  }
 }
 
 export default function AboutPage() {

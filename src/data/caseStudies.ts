@@ -237,8 +237,8 @@ export const caseStudies: CaseStudy[] = [
     status: 'Ongoing',
     heroImage: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/Ref-1_n7fdve.jpg', // Cloudinary URL placeholder
     imageCarousel: [
-      '', // Cloudinary URL - Fleet in action
-      '', // Cloudinary URL - Team portraits
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229029/DSC_4284-Edit_o3mirq.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/Ref-1_n7fdve.jpg', // Cloudinary URL - Team portraits
       '', // Cloudinary URL - Facility operations
       '', // Cloudinary URL - Truck loading
       ''  // Cloudinary URL - On-the-road shots
