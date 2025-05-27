@@ -80,7 +80,6 @@ export function Testimonials({
   title = "Trusted by Leading Haulage & Transport Companies",
   subtitle = "See how Brandjam helps businesses like yours achieve remarkable results",
   testimonials = defaultTestimonials,
-  layout = "grid"
 }: TestimonialsProps) {
   // Note: layout parameter reserved for future implementation of carousel view
   return (
@@ -116,7 +115,7 @@ export function Testimonials({
 
                 {/* Content */}
                 <blockquote className="text-foreground mb-6 leading-relaxed flex-grow">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </blockquote>
 
                 {/* Author */}

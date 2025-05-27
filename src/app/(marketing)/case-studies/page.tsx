@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
               <span className="block text-accent mt-2">Across the Industry</span>
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed">
-              From local haulers to nationwide logistics giants, discover how we've helped
+              From local haulers to nationwide logistics giants, discover how we&apos;ve helped
               transport companies accelerate growth, strengthen their digital presence,
               and dominate their markets.
             </p>
@@ -126,7 +126,7 @@ export default function CaseStudiesPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
-              {featuredStudies.map((study, index) => (
+              {featuredStudies.map((study) => (
                 <Link
                   key={study.id}
                   href={`/case-studies/${study.slug}`}

@@ -21,6 +21,7 @@ export interface ServiceInfo {
   subtitle: string
   description: string
   heroImageUrl: string // Full URL for the hero image
+  featureImageUrl?: string
   benefits: string[]
   process: ServiceProcess[]
   stats: ServiceStats
