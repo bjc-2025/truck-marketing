@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Haul Growth',
+  title: 'Contact Us - Trucking Marketing Experts',
   description: 'Get in touch with our team to discuss how we can help grow your trucking business.',
 }
 

@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const { slug } = await params
   
   return {
-    title: `${slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - Haul Growth Blog`,
+    title: `${slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - Truck Marketing Blog`,
     description: `Read our latest insights about ${slug.replace(/-/g, ' ')} in the trucking industry.`,
   }
 }

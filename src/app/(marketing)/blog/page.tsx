@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Blog - Haul Growth',
+  title: 'Blog - Trucking Marketing Insights',
   description: 'Stay updated with the latest insights, tips, and trends in trucking industry marketing.',
 }
 

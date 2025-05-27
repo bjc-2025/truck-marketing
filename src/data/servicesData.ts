@@ -20,7 +20,6 @@ export interface ServiceInfo {
   title: string
   subtitle: string
   description: string
-  icon: string // Emoji icon
   heroImageUrl: string // Full URL for the hero image
   benefits: string[]
   process: ServiceProcess[]
@@ -46,7 +45,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Trucking SEO',
     subtitle: 'Get Found by Companies Actively Searching for Transport Services',
     description: 'Dominate search results and attract high-quality leads with SEO strategies specifically designed for the trucking and logistics industry.',
-    icon: '🔍',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/dawsons-scaled_yx9ewf.jpg',
     benefits: [
       'Rank #1 for "trucking companies near me" and route-specific searches',
@@ -88,7 +86,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Logistics Lead Generation',
     subtitle: 'Fill Your Pipeline with Qualified Shippers Ready to Move',
     description: 'Stop chasing loads and start attracting premium shippers with our proven lead generation system built exclusively for trucking companies.',
-    icon: '👥',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/logistics_lead_gen_hero_page_xcyfwa.jpg',
     benefits: [
       'Generate 50-200 qualified leads per month',
@@ -130,7 +127,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Website Development',
     subtitle: 'Professional Websites That Convert Visitors into Long-Term Contracts',
     description: 'Your website is your digital storefront. We build fast, professional sites that establish credibility and generate leads 24/7.',
-    icon: '🌐',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/website_dev_truck_hero_page_bnmjkl.jpg',
     benefits: [
       'Convert 3x more visitors into qualified leads',
@@ -172,7 +168,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'PPC for Haulage',
     subtitle: 'Immediate Results with Pay-Per-Click Campaigns That Deliver ROI',
     description: 'Get instant visibility and attract high-value shippers with PPC campaigns optimised specifically for the trucking industry.',
-    icon: '🎯',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/ppc_haulage_hero_page_qwerty.jpg',
     benefits: [
       'Start generating leads within 48 hours',
@@ -214,7 +209,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Performance Analytics',
     subtitle: 'Data-Driven Insights to Optimise Your Marketing Investment',
     description: 'Make informed decisions with comprehensive analytics that show exactly what\'s working and where to invest for maximum growth.',
-    icon: '📊',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/analytics_reporting_hero_page_zxcvbn.jpg',
     benefits: [
       'Track ROI on every marketing dollar spent',
@@ -256,7 +250,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Content Capture',
     subtitle: 'High-Quality Content That Drives Engagement and Converts Leads',
     description: 'Capture your audience\'s attention and convert leads with professionally crafted content tailored specifically for the trucking industry.',
-    icon: '📸',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/content_capture_hero_page_mnbvcx.jpg',
     benefits: [
       'Professional video content showcasing your fleet',
@@ -298,7 +291,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Social Media Management',
     subtitle: 'Build Your Brand and Engage Your Audience Across Social Platforms',
     description: 'Engage your audience and build brand loyalty through targeted social media strategies designed for the trucking industry.',
-    icon: '📱',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/social_media_hero_page_qwertyu.jpg',
     benefits: [
       'Build brand awareness in your target markets',
@@ -340,7 +332,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Email Marketing',
     subtitle: 'Nurture Leads and Retain Customers with Effective Email Campaigns',
     description: 'Build lasting relationships with prospects and customers through targeted email marketing campaigns that drive results.',
-    icon: '📧',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/email_marketing_hero_page_asdfgh.jpg',
     benefits: [
       'Nurture leads through the sales funnel',
@@ -382,7 +373,6 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Digital Reputation Management',
     subtitle: 'Build and Maintain a Positive Online Reputation for Your Business',
     description: 'Protect and enhance your trucking company\'s online reputation with proactive monitoring and strategic response management.',
-    icon: '🛡️',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/NH-Trans-W900SAR-Jan-copy_nstogz.jpg',
     benefits: [
       'Monitor your online reputation 24/7',

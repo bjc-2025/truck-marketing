@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - Haul Growth',
+  title: 'Terms of Service - Trucking Marketing Experts',
   description: 'Read our terms of service to understand the conditions for using our website and services.',
 }
 
