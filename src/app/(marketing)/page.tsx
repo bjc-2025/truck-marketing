@@ -3,7 +3,7 @@ import { ServicesGrid } from "@/components/sections/services-grid"
 import { Testimonials } from "@/components/sections/testimonials"
 import { ContactCTA } from "@/components/sections/cta-section"
 import { CarouselSection } from "@/components/sections/carousel-section";
-import LogoCloud from "@/components/logo-grid";
+import LogoCloud from "@/components/sections/logo-grid";
 
 
 export default function HomePage() {
