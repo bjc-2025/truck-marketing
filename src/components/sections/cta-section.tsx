@@ -27,7 +27,6 @@ export function CTASection({
   title,
   description,
   primaryCta,
-  secondaryCta,
   benefits,
   backgroundPattern = true
 }: CTASectionProps) {

@@ -21,7 +21,8 @@ import {
   BarChart3,
   Camera,
   Mail,
-  Shield
+  Shield,
+  Link
 } from "lucide-react"
 
 interface NavItem {
@@ -112,12 +113,12 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+       <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center justify-center w-10 h-10 bg-truck-orange-500 rounded-lg">
               <Truck className="h-6 w-6 text-white" />
             </div>
             <span className="font-bold text-xl text-gray-900">TruckMarketing</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
@@ -125,12 +126,12 @@ export function Navbar() {
               <NavigationMenuList>
                 {/* Home */}
                 <NavigationMenuItem>
-                  <a 
+                  <Link
                     href="/"
                     className="text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
                   >
                     Home
-                  </a>
+                  </Link>
                 </NavigationMenuItem>
 
                 {/* Services Dropdown */}
@@ -219,13 +220,13 @@ export function Navbar() {
                   <div>
                     <h3 className="font-semibold mb-4 text-gray-900">Navigation</h3>
                     <div className="space-y-2">
-                      <a
+                     <Link
                         href="/"
                         className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium text-gray-700"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Home
-                      </a>
+                      </Link>
                       {navigation.map((item) => (
                         <a
                           key={item.href}

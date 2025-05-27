@@ -39,7 +39,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "twincity-truck-centre",
-    content: "Brandjam's marketing and creative strategy elevated Twincity Truck Centre's brand presence remarkably. They understand our industry, delivering engaging content and measurable results that strengthened customer connections.",
+    content: "Brandjams marketing and creative strategy elevated Twincity Truck Centres brand presence remarkably. They understand our industry, delivering engaging content and measurable results that strengthened customer connections.",
     author: {
       name: "Twincity Truck Centre",
       title: "Client",

@@ -70,7 +70,7 @@ export default function AboutPage() {
             </h1>
             
             <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
-              We're the marketing agency that speaks your language - the language of the road, logistics, and getting results that move your business forward.
+              Were the marketing agency that speaks your language - the language of the road, logistics, and getting results that move your business forward.
             </p>
           </div>
         </div>
@@ -85,13 +85,13 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg mx-auto text-gray-700 leading-relaxed">
               <p className="text-xl mb-6">
-                Born from the heart of Australia's transport corridor in Albury Wodonga, Truck Marketing was founded on a simple belief: the trucking and logistics industry deserves marketing that understands the unique challenges, opportunities, and spirit of life on the road.
+                Born from the heart of Australias transport corridor in Albury Wodonga, Truck Marketing was founded on a simple belief: the trucking and logistics industry deserves marketing that understands the unique challenges, opportunities, and spirit of life on the road.
               </p>
               <p className="mb-6">
-                While other agencies try to apply generic strategies to every industry, we've made trucking and logistics our specialty. We know that a campaign that works for a tech startup won't necessarily work for a freight company. We understand the regulatory environment, the tight margins, the importance of safety, and the pride that comes with keeping Australia moving.
+                While other agencies try to apply generic strategies to every industry, weve made trucking and logistics our specialty. We know that a campaign that works for a tech startup wont necessarily work for a freight company. We understand the regulatory environment, the tight margins, the importance of safety, and the pride that comes with keeping Australia moving.
               </p>
               <p className="mb-6">
-                From our base in Albury Wodonga, we've traveled the length and breadth of Australia, working with trucking companies from the red dirt of the Pilbara to the bustling ports of Sydney. No job is too far, no challenge too big. When Australian trucking companies need results, they call us.
+                From our base in Albury Wodonga, weve traveled the length and breadth of Australia, working with trucking companies from the red dirt of the Pilbara to the bustling ports of Sydney. No job is too far, no challenge too big. When Australian trucking companies need results, they call us.
               </p>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 />
               </div>
               <p className="text-lg text-gray-600 italic">
-                Small team, big impact. We're the marketing muscle behind Australia's most successful trucking companies.
+                Small team, big impact. Were the marketing muscle behind Australias most successful trucking companies.
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Industry Specialists</h3>
                 <p className="text-gray-600">
-                  We don't do marketing for everyone. We do marketing for trucking and logistics companies, and we do it better than anyone else.
+                  We dont do marketing for everyone. We do marketing for trucking and logistics companies, and we do it better than anyone else.
                 </p>
               </div>
 
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Small Team, Big Results</h3>
                 <p className="text-gray-600">
-                  We're lean, agile, and focused. No bureaucracy, no endless meetings - just results that drive your business forward.
+                  Were lean, agile, and focused. No bureaucracy, no endless meetings - just results that drive your business forward.
                 </p>
               </div>
 
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Proven Strategies</h3>
                 <p className="text-gray-600">
-                  Our marketing strategies are road-tested and results-proven. We know what works in trucking because it's all we do.
+                  Our marketing strategies are road-tested and results-proven. We know what works in trucking because its all we do.
                 </p>
               </div>
 
@@ -203,7 +203,7 @@ export default function AboutPage() {
           <div className="relative p-12 text-center text-white">
             <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
             <p className="text-xl leading-relaxed max-w-4xl mx-auto">
-              To be the driving force behind the growth of Australia's trucking and logistics companies. We're not just marketers - we're partners in your success, dedicated to helping you build stronger brands, attract better clients, and grow more profitable businesses.
+              To be the driving force behind the growth of Australias trucking and logistics companies. Were not just marketers - were partners in your success, dedicated to helping you build stronger brands, attract better clients, and grow more profitable businesses.
             </p>
           </div>
         </section>
@@ -212,7 +212,7 @@ export default function AboutPage() {
         <section className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Shift Your Marketing into High Gear?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Let's talk about how we can help your trucking company reach new destinations and achieve the growth you deserve.
+            Lets talk about how we can help your trucking company reach new destinations and achieve the growth you deserve.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function LogoCloud() {
     // Define the logos as an array of objects for easier management
  const logos = [
@@ -20,14 +22,13 @@ export default function LogoCloud() {
                 <h2 className="text-center text-3xl font-bold sm:text-4xl lg:text-display-sm">Trucking companines we work with</h2>
                 <div className="mx-auto mt-20 flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 sm:gap-y-12">
                     {logos.map((logo) => (
-                        <img
+                        <Image
                             key={logo.alt} // Using alt text as a unique key for list rendering
-                            // Calculate Tailwind height class based on pixel height (e.g., h-5 for 20px)
                             className={`h-${logo.heightPx / 4} w-fit`}
                             src={logo.src} // Local path to public/logos folder
                             alt={logo.alt}
                             height={logo.heightPx} // Explicit pixel height for image rendering
-                            width="auto" // Maintain aspect ratio
+                            width={logo.heightPx * 4} // Provide a width in pixels; adjust as needed
                         />
                     ))}
                 </div>

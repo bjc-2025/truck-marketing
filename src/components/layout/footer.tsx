@@ -105,7 +105,7 @@ export default function Footer() {
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Australia's leading marketing agency specialising in trucking and logistics companies. We help transport businesses drive growth, generate leads, and build stronger brands.
+              Australias leading marketing agency specialising in trucking and logistics companies. We help transport businesses drive growth, generate leads, and build stronger brands.
             </p>
             
             {/* Contact Info */}
