@@ -7,10 +7,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Mail, Calendar } from "lucide-react"
+import { ArrowRight, CheckCircle2,} from "lucide-react"
 import { serviceData, ServiceSlug, ServiceProcess } from '@/data/servicesData'
 import { notFound } from 'next/navigation'
 import SuccessStory from '@/components/sections/SuccessStory'
+import { ContactCTA } from '@/components/sections'
 
 interface ServicePageProps {
   params: Promise<{
@@ -400,52 +401,9 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
           />
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white" aria-labelledby="cta-heading">
-          <div className="container mx-auto px-6 text-center">
-            <h2 id="cta-heading" className="text-4xl font-bold mb-6">
-              Ready to Accelerate Your Growth?
-            </h2>
-            <p className="text-xl mb-10 max-w-2xl mx-auto">
-              Let&apos;s discuss how our {service.title} services can help you attract more profitable loads and grow your trucking business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-6 text-lg" 
-                asChild
-              >
-                <Link href="/contact">
-                  <Calendar className="mr-2 h-5 w-5" aria-hidden="true" />
-                  Schedule Free Consultation
-                </Link>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-lg transition-colors" 
-                asChild
-              >
-                <a href="mailto:hello@truckmarketing.com">
-                  <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
-                  <span className="sr-only">Email us at </span>
-                  hello@truckmarketing.com
-                </a>
-              </Button>
-            </div>
-            
-            <p className="mt-8 text-white">
-              Or call us directly at{' '}
-              <a 
-                href="tel:+61491999011" 
-                className="font-bold text-white hover:underline"
-                aria-label="Call us at 0491 999 011"
-              >
-                0491 999 011
-              </a>
-            </p>
-          </div>
-        </section>
+         {/* Contact CTA */}
+      <ContactCTA />
+
       </main>
     </>
   )

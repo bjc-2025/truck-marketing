@@ -108,7 +108,7 @@ export function getRandomSuccessStory(): SuccessStoryData {
 }
 
 // Helper function to get success stories by service type (you can extend this)
-export function getSuccessStoriesByTag(tag: string): SuccessStoryData[] {
+export function getSuccessStoriesByTag(_tag: string): SuccessStoryData[] {
   // This is a simple implementation - you could add tags to the data structure
   // and filter based on them for more sophisticated matching
   return Object.values(successData)
