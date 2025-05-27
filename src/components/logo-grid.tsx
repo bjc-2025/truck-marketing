@@ -11,7 +11,7 @@ export default function LogoCloud() {
         { src: '/logos/RTorange.svg', alt: 'RT Orange logo', heightPx: 24 },
         { src: '/logos/Scholz.svg', alt: 'Scholz Baulk Haulage', heightPx: 24 },
         { src: '/logos/Truckparts.svg', alt: 'Truck Parts Company logo Supplier of truck components and accessories', heightPx: 24 },
-        { src: '/logos/Twincity.svg', alt: 'Twin City Truck Centre Logo', heightPx: 24 },
+        { src: '/logos/twincity.svg', alt: 'Twin City Truck Centre Logo', heightPx: 24 },
         { src: '/logos/Killen.svg', alt: 'Killen Trucking logo Freight transport services company', heightPx: 24 },
         { src: '/logos/centurion.svg', alt: 'Centurion logo Australian logistics and transport provider', heightPx: 20 },
     ];

@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Mail, Calendar } from "lucide-react"
 import { serviceData, ServiceSlug, ServiceProcess } from '@/data/servicesData'
 import { notFound } from 'next/navigation'
+import SuccessStory from '@/components/sections/SuccessStory'
 
 interface ServicePageProps {
   params: Promise<{
@@ -353,60 +354,8 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
           </div>
         </section>
 
-        {/* Success Story Preview */}
-        <section className="py-20" aria-labelledby="success-story-heading">
-          <div className="container mx-auto px-6">
-            <div className="bg-slate-900 text-white rounded-3xl p-12 max-w-5xl mx-auto">
-              <h3 id="success-story-heading" className="text-3xl font-bold mb-8">
-                Success Story
-              </h3>
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <blockquote className="text-lg mb-6 text-gray-300">
-                    <p>
-                      &quot;TruckMarketing transformed our online presence. We went from invisible to ranking #1 for our key routes. Our phone hasn&apos;t stopped ringing with quality loads.&quot;
-                    </p>
-                  </blockquote>
-                  <cite className="not-italic">
-                    <p className="font-semibold">Mike Thompson</p>
-                    <p className="text-gray-400">CEO, Thompson Transport LLC</p>
-                  </cite>
-                  <div className="mt-6">
-                    <Button 
-                      variant="outline" 
-                      className="border-white text-white hover:bg-white hover:text-slate-900"
-                      asChild
-                    >
-                      <Link href="/case-studies/thompson-transport">
-                        Read Full Case Study
-                        <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <p className="text-4xl font-bold text-orange-500">425%</p>
-                    <p className="text-sm text-gray-400">Increase in Leads</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-bold text-orange-500">$2.4M</p>
-                    <p className="text-sm text-gray-400">New Revenue</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-bold text-orange-500">87%</p>
-                    <p className="text-sm text-gray-400">Less Empty Miles</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-4xl font-bold text-orange-500">6mo</p>
-                    <p className="text-sm text-gray-400">ROI Timeline</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Success Story Component - Now using the extracted component */}
+        <SuccessStory storyId="thompson-transport" />
 
         {/* FAQ Section with Schema */}
         <section className="py-20 bg-gray-50" aria-labelledby="faq-heading">
