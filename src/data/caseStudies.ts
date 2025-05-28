@@ -69,7 +69,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'cs-001',
     slug: 'twincity-truck-centre',
     title: 'TwinCity Truck Centre',
-    subtitle: 'Everything a truck dealership should be!',
+    subtitle: 'Everything a truck dealership should be & more!',
     company: 'TwinCity Truck Centre',
     industry: 'Automotive - Commercial Vehicles',
     turnover: 'Ongoing',

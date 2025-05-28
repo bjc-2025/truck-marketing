@@ -7,11 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2,} from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { serviceData, ServiceSlug, ServiceProcess } from '@/data/servicesData'
 import { notFound } from 'next/navigation'
 import SuccessStory from '@/components/sections/SuccessStory'
-import { ContactCTA } from '@/components/sections'
+import { ContactCTA } from '@/components/sections/cta-section'
+import KeyBenefits from '@/components/sections/key-benefits'
 
 interface ServicePageProps {
   params: Promise<{
@@ -218,13 +219,13 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
               
               <div className="flex items-center gap-3 mb-6">
                 <Badge className="bg-orange-500 text-white border-0 px-4 py-1">
-                  Industry Specialized
+                  Industry Specialised
                 </Badge>
               </div>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6">
                 {service.title}
               </h1>
-              <p className="text-2xl mb-8 text-gray-200">
+              <p className="text-2xl mb-8 text-gray-200 max-w-2xl">
                 {service.subtitle}
               </p>
               <p className="text-lg mb-10 text-gray-300 max-w-2xl">
@@ -263,30 +264,17 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
           )}
         </section>
 
-        {/* Key Benefits Section */}
-        <section className="py-20 bg-gray-50" aria-labelledby="benefits-heading">
-          <div className="container mx-auto px-6">
-            <h2 id="benefits-heading" className="text-4xl font-bold text-center mb-16">
-              Why {service.title} Matters for Your Trucking Business
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {service.benefits.map((benefit: string, index: number) => (
-                <div key={index} className="flex gap-4">
-                  <CheckCircle2 
-                    className="h-6 w-6 text-orange-500 flex-shrink-0 mt-1" 
-                    aria-hidden="true" 
-                  />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-16 text-center bg-orange-500 text-white py-12 px-6 rounded-2xl max-w-3xl mx-auto">
-              <p className="text-6xl font-bold mb-2">{service.stats.value}</p>
-              <p className="text-xl">{service.stats.metric}</p>
-            </div>
-          </div>
-        </section>
+        {/* Key Benefits Section - Using the new component */}
+        <KeyBenefits
+          title={`Why ${service.title} Matters for Your Trucking Business`}
+          subtitle="Transform your trucking operations with marketing strategies built specifically for the transport industry."
+          description="We understand the unique challenges facing trucking companies today - from driver recruitment to regulatory compliance, tight margins to fierce competition. Our specialized approach delivers results that matter to your bottom line."
+          benefits={service.benefits}
+          stats={service.stats}
+          imageUrl={service.featureImageUrl || '/images/trucking-benefits.jpg'}
+          imageAlt={`${service.title} benefits for trucking companies`}
+          reverse={false}
+        />
 
         {/* Process Section */}
         <section className="py-20" aria-labelledby="process-heading">
@@ -343,7 +331,7 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
               
               <div className="relative h-96 rounded-xl overflow-hidden">
                 <Image
-                  src={service.featureImageUrl || '/images/trucking-service-features.jpg'}
+                  src={service.secongdaryImageUrl || '/images/trucking-service-features.jpg'}
                   alt={`${service.title} features for trucking companies`}
                   fill
                   className="object-cover"
@@ -356,7 +344,7 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
         </section>
 
         {/* Success Story Component - Now using the extracted component */}
-        <SuccessStory storyId="thompson-transport" />
+        <SuccessStory storyId="Dawsons-Haulage" />
 
         {/* FAQ Section with Schema */}
         <section className="py-20 bg-gray-50" aria-labelledby="faq-heading">
@@ -401,8 +389,8 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
           />
         </section>
 
-         {/* Contact CTA */}
-      <ContactCTA />
+        {/* Contact CTA */}
+        <ContactCTA />
 
       </main>
     </>

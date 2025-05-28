@@ -102,6 +102,7 @@ const navigation: NavItem[] = [
   { title: "About", href: "/about" },
   { title: "Case Studies", href: "/case-studies" },
   { title: "Blog", href: "/blog" },
+  { title: "Gallery", href: "/gallery" },
   { title: "Contact", href: "/contact" }
 ]
 

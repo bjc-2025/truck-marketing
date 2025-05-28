@@ -27,7 +27,7 @@ interface TestimonialsProps {
 const defaultTestimonials: Testimonial[] = [
   {
     id: "dawsons-haulage",
-    content: "Brandjam understood Dawsons Haulage, delivering tailored branding and a new website that significantly enhanced our market presence and customer engagement. Their creative, responsive team delivers top-quality results.",
+    content: "Truckmarketing understood our business at Dawsons Haulage, delivering tailored branding and a new website that significantly enhanced our market presence and customer engagement. Their creative, responsive team delivers top-quality results that exceeded our expectations.",
     author: {
       name: "Dawsons Haulage",
       title: "Client",
@@ -39,7 +39,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "twincity-truck-centre",
-    content: "Brandjams marketing and creative strategy elevated Twincity Truck Centres brand presence remarkably. They understand our industry, delivering engaging content and measurable results that strengthened customer connections.",
+    content: "Truckmarketing's marketing and creative strategy elevated our brand presence at Twincity Truck Centre remarkably. They understand our industry, delivering engaging content and measurable results that strengthened our customer connections in ways we never imagined.",
     author: {
       name: "Twincity Truck Centre",
       title: "Client",
@@ -51,7 +51,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "kearneys-transport",
-    content: "Brandjam modernized Kearneys Transport's online presence with a new website and stunning photography. They understood our needs, delivering an innovative, user-friendly site that showcases our fleet. Their efficient team listened to our vision.",
+    content: "Truckmarketing modernized our online presence at Kearneys Transport with a new website and stunning photography. They understood our needs perfectly, delivering an innovative, user-friendly site that showcases our fleet beautifully. Their efficient team listened to our vision and brought it to life.",
     author: {
       name: "Kearneys Transport",
       title: "Client",
@@ -78,7 +78,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export function Testimonials({
   title = "Trusted by Leading Haulage & Transport Companies",
-  subtitle = "See how Brandjam helps businesses like yours achieve remarkable results",
+  subtitle = "See how Truckmarketing helps businesses like yours achieve remarkable results",
   testimonials = defaultTestimonials,
 }: TestimonialsProps) {
   // Note: layout parameter reserved for future implementation of carousel view

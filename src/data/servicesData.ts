@@ -22,6 +22,7 @@ export interface ServiceInfo {
   description: string
   heroImageUrl: string // Full URL for the hero image
   featureImageUrl?: string
+  secongdaryImageUrl?: string
   benefits: string[]
   process: ServiceProcess[]
   stats: ServiceStats
@@ -47,6 +48,8 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     subtitle: 'Get Found by Companies Actively Searching for Transport Services',
     description: 'Dominate search results and attract high-quality leads with SEO strategies specifically designed for the trucking and logistics industry.',
     heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/dawsons-scaled_yx9ewf.jpg',
+    featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/dawsons-scaled_yx9ewf.jpg',
+    secongdaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/NH-Trans-W900SAR-Jan-copy_nstogz.jpg',
     benefits: [
       'Rank #1 for "trucking companies near me" and route-specific searches',
       'Attract shippers actively looking for reliable carriers',
@@ -128,7 +131,9 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     title: 'Website Development',
     subtitle: 'Professional Websites That Convert Visitors into Long-Term Contracts',
     description: 'Your website is your digital storefront. We build fast, professional sites that establish credibility and generate leads 24/7.',
-    heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/website_dev_truck_hero_page_bnmjkl.jpg',
+    heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229026/TCTC-Web-Mockup-scaled_jhi0ct.jpg',
+    featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/Untitled-1_ksb9pg.jpg',
+    secongdaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748383797/Screenshot_2025-05-22_at_10.55.02_am_rvcx9m.png',
     benefits: [
       'Convert 3x more visitors into qualified leads',
       'Showcase your fleet and capabilities professionally',

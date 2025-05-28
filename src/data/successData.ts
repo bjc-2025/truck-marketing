@@ -13,6 +13,7 @@ export interface SuccessStoryData {
   quote: string
   caseStudyUrl?: string
   metrics: SuccessMetric[]
+  backgroundImageUrl?: string; 
 }
 
 export const successData: Record<string, SuccessStoryData> = {
@@ -23,6 +24,7 @@ export const successData: Record<string, SuccessStoryData> = {
     companyName: 'Thompson Transport LLC',
     quote: 'TruckMarketing transformed our online presence. We went from invisible to ranking #1 for our key routes. Our phone hasn\'t stopped ringing with quality loads.',
     caseStudyUrl: '/case-studies/thompson-transport',
+    backgroundImageUrl: "https://res.cloudinary.com/your-cloud-name/image/upload/v1234567890/your-image-path1.jpg",
     metrics: [
       {
         value: '425%',
@@ -68,13 +70,14 @@ export const successData: Record<string, SuccessStoryData> = {
       }
     ]
   },
-  'coastal-freight': {
-    id: 'coastal-freight',
-    clientName: 'Roberto Martinez',
-    clientTitle: 'Fleet Manager',
-    companyName: 'Coastal Freight Solutions',
-    quote: 'Our driver recruitment went from a nightmare to a dream. TruckMarketing helped us attract quality drivers and reduce turnover by 70%.',
-    caseStudyUrl: '/case-studies/coastal-freight',
+  'Dawsons-Haulage': {
+    id: 'Dawsons-Haulage',
+    clientName: 'Graeme Goz Dawson',
+    clientTitle: 'Founder / Director',
+    companyName: 'Dawsons Haulage',
+    quote: 'The new website has improved customer engagement, and were thrilled with the ongoing impact of our partnership.',
+    caseStudyUrl: '/case-studies/dawsons-haulage',
+    backgroundImageUrl: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748385222/Dawsons_Team_cctpi6.jpg",
     metrics: [
       {
         value: '70%',

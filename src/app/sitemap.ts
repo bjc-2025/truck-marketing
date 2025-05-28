@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
+import { getBlogSitemapEntries } from '@/lib/blog'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const URL = "https://truckmarketing.com.au";
-  
+  const blogEntries = getBlogSitemapEntries()
   return [
     {
       url: URL,
@@ -52,5 +53,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    ...blogEntries.map(entry => ({
+      url: `${URL}${entry.url}`,
+      lastModified: entry.lastModified,
+      changeFrequency: entry.changeFrequency,
+      priority: entry.priority,
+    })),
+    {
+      url: `${URL}/sitemap.xml`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.1,
+    }
   ]
 }
