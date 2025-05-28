@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"  // Add this import
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { 
   NavigationMenu,
@@ -30,6 +30,7 @@ interface NavItem {
   href: string
   description?: string
   icon?: React.ComponentType<{ className?: string }>
+  priority?: 'high' | 'medium' | 'low' // Add priority for smart prefetching
 }
 
 interface NavSection {
@@ -44,77 +45,100 @@ const services: NavSection = {
       title: "Website Development",
       href: "/services/website-development",
       description: "Custom websites that establish credibility and convert visitors",
-      icon: Globe
+      icon: Globe,
+      priority: 'high' // High priority service
     },
     {
       title: "Trucking SEO",
       href: "/services/trucking-seo",
       description: "Get found by companies searching for transport services",
-      icon: Search
+      icon: Search,
+      priority: 'high' // High priority service
     },
     {
       title: "Logistics Lead Generation",
       href: "/services/logistics-lead-generation", 
       description: "Fill your pipeline with qualified prospects",
-      icon: Users
+      icon: Users,
+      priority: 'high' // High priority service
     },
     {
       title: "PPC for Haulage",
       href: "/services/ppc-for-haulage",
       description: "Targeted ads that deliver results for haulage companies",
-      icon: Target
+      icon: Target,
+      priority: 'medium'
     },
     {
       title: "Performance Analytics",
       href: "/services/analytics-reporting",
       description: "Track and optimize your marketing ROI",
-      icon: BarChart3
+      icon: BarChart3,
+      priority: 'medium'
     },
     {
       title: "Content Capture",
       href: "/services/content-capture",
       description: "Capture and convert leads with high-quality content",
-      icon: Camera
+      icon: Camera,
+      priority: 'medium'
     },
     {
       title: "Social Media Management",
       href: "/services/social-media-management",
       description: "Engage your audience and build brand loyalty",
-      icon: Users
+      icon: Users,
+      priority: 'low'
     },
     {
       title: "Email Marketing",
       href: "/services/email-marketing",
       description: "Nurture leads and retain customers with effective campaigns",
-      icon: Mail
+      icon: Mail,
+      priority: 'low'
     },
     {
       title: "Digital Reputation Management",
       href: "/services/digital-reputation-management",
       description: "Build and maintain a positive online reputation",
-      icon: Shield
+      icon: Shield,
+      priority: 'low'
     }
   ]
 }
 
-// Navigation items excluding Home (we'll handle Home separately)
+// Navigation items with priority
 const navigation: NavItem[] = [
-  { title: "About", href: "/about" },
-  { title: "Case Studies", href: "/case-studies" },
-  { title: "Blog", href: "/blog" },
-  { title: "Gallery", href: "/gallery" },
-  { title: "Contact", href: "/contact" }
+  { title: "About", href: "/about", priority: 'high' },
+  { title: "Case Studies", href: "/case-studies", priority: 'high' },
+  { title: "Blog", href: "/blog", priority: 'medium' },
+  { title: "Gallery", href: "/gallery", priority: 'low' },
+  { title: "Contact", href: "/contact", priority: 'high' }
 ]
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  // Function to determine prefetch behavior based on priority
+  const shouldPrefetch = (priority?: 'high' | 'medium' | 'low') => {
+    switch (priority) {
+      case 'high':
+        return true  // Always prefetch high priority
+      case 'medium':
+        return true  // Prefetch medium priority
+      case 'low':
+        return false // Let Next.js handle low priority with default behavior
+      default:
+        return true  // Default to prefetch
+    }
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          {/* Logo with prefetch */}
+          <Link href="/" prefetch={true} className="flex items-center gap-2">
             <div className="flex items-center justify-center w-10 h-10 bg-truck-orange-500 rounded-lg">
               <Truck className="h-6 w-6 text-white" />
             </div>
@@ -129,6 +153,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link
                     href="/"
+                    prefetch={true}
                     className="text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
                   >
                     Home
@@ -147,6 +172,7 @@ export function Navbar() {
                           <Link
                             key={`desktop-${service.href}`}
                             href={service.href}
+                            prefetch={shouldPrefetch(service.priority)}
                             className="group block p-3 rounded-lg hover:bg-gray-50 transition-colors"
                           >
                             <div className="flex items-start gap-3">
@@ -174,6 +200,7 @@ export function Navbar() {
                   <NavigationMenuItem key={`desktop-${item.href}`}>
                     <Link 
                       href={item.href}
+                      prefetch={shouldPrefetch(item.priority)}
                       className="text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
                     >
                       {item.title}
@@ -193,7 +220,7 @@ export function Navbar() {
               </a>
             </Button>
             <Button size="sm" className="bg-truck-orange-500 hover:bg-truck-orange-600 text-white" asChild>
-              <Link href="/contact">
+              <Link href="/contact" prefetch={true}>
                 Get Quote
               </Link>
             </Button>
@@ -223,6 +250,7 @@ export function Navbar() {
                     <div className="space-y-2">
                       <Link
                         href="/"
+                        prefetch={true}
                         className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium text-gray-700"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -232,6 +260,7 @@ export function Navbar() {
                         <Link
                           key={`mobile-${item.href}`}
                           href={item.href}
+                          prefetch={shouldPrefetch(item.priority)}
                           className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium text-gray-700"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -249,6 +278,7 @@ export function Navbar() {
                         <Link
                           key={`mobile-${service.href}`}
                           href={service.href}
+                          prefetch={shouldPrefetch(service.priority)}
                           className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -275,7 +305,7 @@ export function Navbar() {
                       </a>
                     </Button>
                     <Button className="w-full bg-truck-orange-500 hover:bg-truck-orange-600 text-white" asChild>
-                      <Link href="/contact">
+                      <Link href="/contact" prefetch={true}>
                         Get Free Quote
                       </Link>
                     </Button>

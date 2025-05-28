@@ -51,7 +51,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "kearneys-transport",
-    content: "Truckmarketing modernized our online presence at Kearneys Transport with a new website and stunning photography. They understood our needs perfectly, delivering an innovative, user-friendly site that showcases our fleet beautifully. Their efficient team listened to our vision and brought it to life.",
+    content: "Truckmarketing modernised our online presence at Kearneys Transport with a new website and stunning photography. They understood our needs perfectly, delivering an innovative, user-friendly site that showcases our fleet beautifully. Their efficient team listened to our vision and brought it to life.",
     author: {
       name: "Kearneys Transport",
       title: "Client",
@@ -59,7 +59,7 @@ const defaultTestimonials: Testimonial[] = [
       initials: "KT"
     },
     rating: 5,
-    result: "Modernized Web Presence"
+    result: "Modernised Web Presence"
   }
 ]
 
