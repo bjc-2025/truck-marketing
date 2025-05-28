@@ -331,7 +331,7 @@ export default async function ServicePage({ params: paramsProp }: ServicePagePro
               
               <div className="relative h-96 rounded-xl overflow-hidden">
                 <Image
-                  src={service.secongdaryImageUrl || '/images/trucking-service-features.jpg'}
+                  src={service.secondaryImageUrl || '/images/trucking-service-features.jpg'}
                   alt={`${service.title} features for trucking companies`}
                   fill
                   className="object-cover"

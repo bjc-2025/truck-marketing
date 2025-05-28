@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react"
+import Image from "next/image"
 
 interface HeroProps {
   badge?: string
@@ -20,6 +21,7 @@ interface HeroProps {
     label: string
     icon?: React.ComponentType<{ className?: string }>
   }>
+  backgroundImage?: string
 }
 
 export function Hero({
@@ -29,25 +31,32 @@ export function Hero({
   description,
   primaryCta,
   secondaryCta,
-  stats
+  stats,
+  backgroundImage
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://res.cloudinary.com/dvwug91mb/image/upload/v1747977431/DSC_0147-Enhanced-NR-Edit_i0we4o.jpg')`
-        }}
-      />
+      {/* Optimized Background Image using Next.js Image */}
+      {backgroundImage && (
+        <div className="absolute inset-0">
+          <Image
+            src={backgroundImage}
+            alt="Trucking and logistics background"
+            fill
+            className="object-cover"
+            priority // Since this is above the fold
+            quality={75} // Reduce quality slightly for better performance
+            sizes="100vw" // Since it covers the full viewport
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          />
+        </div>
+      )}
       
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/40 z-10" />
       
-      {/* Blue gradient overlay for brand consistency */}
-      <div className="absolute inset-0 bg-black/40" />
-      
-      <div className="relative container-wide section-padding">
+      <div className="relative container-wide section-padding z-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
@@ -88,7 +97,7 @@ export function Hero({
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-white/30 text-lg px-8 py-6 h-auto"
+                  className=" text-lg px-8 py-6 h-auto"
                   asChild
                 >
                   <a href={secondaryCta.href}>
@@ -128,7 +137,7 @@ export function Hero({
   )
 }
 
-// Default export with example data
+// Default export with optimized image URL
 export function TruckingHero() {
   return (
     <Hero
@@ -144,6 +153,7 @@ export function TruckingHero() {
         text: "View Case Studies",
         href: "/case-studies"
       }}
+      backgroundImage="https://res.cloudinary.com/dvwug91mb/image/upload/c_scale,f_webp,q_75,w_1920/v1747977431/DSC_0147-Enhanced-NR-Edit_i0we4o.jpg"
       stats={[
         {
           value: "25+",
