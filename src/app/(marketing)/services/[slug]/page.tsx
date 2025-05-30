@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Link from 'next/link'
 import { ArrowRight } from "lucide-react" // Only need specific icons used directly in this file
-import { serviceData, ServiceSlug, ServiceFeature, ServiceInfo } from '@/data/servicesData' // Import necessary types and data
+import { serviceData, ServiceSlug, ServiceFeature, ServiceInfo, ServiceFAQ } from '@/data/servicesData' // Import necessary types and data
 import { notFound } from 'next/navigation'
 
 // Import your section components
@@ -19,12 +19,17 @@ import FeaturesGrid from '@/components/services/featuresGrid'; // Assuming this 
 import ProcessSectionComponent from '@/components/services/processSection'; // Assuming this component is used
 
 
+// Type guard to validate slug
+function isServiceSlug(slug: string): slug is ServiceSlug {
+  return Object.keys(serviceData).includes(slug);
+}
+
 // Define props type for the page component (Server Component receives resolved params)
 interface ServicePageProps {
-  params: {
-    slug: ServiceSlug
-  }
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
+
 
 // Generate static params for all service pages
 // This function enables Next.js to pre-render these pages at build time.
@@ -50,22 +55,20 @@ export function generateViewport({ params: _paramsProp }: ServicePageProps): Vie
 // Generate metadata for the page with comprehensive SEO
 // This function sets various <meta> and <link> tags in the document <head>.
 export async function generateMetadata(
-  { params }: ServicePageProps, // Direct access to resolved params
-  parent: ResolvingMetadata // Access to parent route's metadata
+  { params }: ServicePageProps,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const slug = params.slug;
+  const { slug } = await params;
 
   // Validate slug and get service data
-  if (!slug || !serviceData[slug]) {
-    // Return metadata for a 404 page if the slug doesn't match existing data
+  if (!isServiceSlug(slug)) {
     return {
       title: 'Service Not Found | TruckMarketing',
       description: 'The requested service page does not exist.',
       robots: 'noindex, nofollow', // Prevent indexing of invalid URLs
     }
   }
-
-  const service = serviceData[slug];
+const service = serviceData[slug as ServiceSlug];
   const canonicalUrl = `https://truckmarketing.com/services/${slug}`; // Construct canonical URL
 
   // Get parent metadata (useful for inheriting default settings like site name, default OG images)
@@ -216,14 +219,13 @@ function generateStructuredData(service: ServiceInfo, slug: string) {
 
 // Main Service Page Component (Server Component by default)
 export default async function ServicePage({ params }: ServicePageProps) {
-  const slug = params.slug;
+  const { slug } = await params;
 
-  // Fetch the service data. If not found, return a 404 page.
-  const service = serviceData[slug];
-
-  if (!service) {
-    notFound(); // Next.js function to render the nearest not-found page or the default
+  // Validate slug type and fetch service data
+  if (!isServiceSlug(slug)) {
+    notFound();
   }
+  const service = serviceData[slug as ServiceSlug];
 
   // Generate the structured data objects
   const { serviceSchema, faqSchema } = generateStructuredData(service, slug);
@@ -382,7 +384,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             <div className="max-w-3xl mx-auto space-y-6">
               {/* Loop through FAQ data */}
-              {service.faqs.map((faq, index) => (
+              {service.faqs.map((faq: ServiceFAQ, index: number) => (
                 <Card key={index}> {/* Use Card component */}
                   <CardHeader>
                     <CardTitle>
