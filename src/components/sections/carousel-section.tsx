@@ -51,16 +51,16 @@ const defaultImages: CarouselImage[] = [
   {
     id: "4",
     src: "https://res.cloudinary.com/dvwug91mb/image/upload/v1747978820/Centourion1_wm5soo.webp",
-    alt: "Delivery Team",
-    title: "Professional Drivers",
-    description: "Experienced and reliable staff delivering excellence"
+    alt: "Centurion Transport",
+    title: "Centurion Transport",
+    description: "Innovative marketing solutions for transport companies"
   },
   {
     id: "5",
     src: "https://res.cloudinary.com/dvwug91mb/image/upload/v1747977467/DJI_20250205160849_0049_D_copy_kzzg0y.jpg",
-    alt: "Technology Integration",
-    title: "Smart Logistics",
-    description: "Advanced tracking and monitoring systems"
+    alt: "Grow Your Trucking Business",
+    title: "Grow Your Trucking Business",
+    description: "Proven strategies to boost your trucking business"
   }
 ]
 

@@ -141,7 +141,7 @@ export function Hero({
 export function TruckingHero() {
   return (
     <Hero
-      badge="Specialized Marketing for Trucking & Logistics"
+      badge="Specialised Marketing for Trucking & Logistics"
       title="Drive Your Business"
       subtitle="Further, Faster"
       description="Proven marketing strategies designed specifically for trucking and logistics companies. Get more qualified leads, boost your visibility, and accelerate your growth."
