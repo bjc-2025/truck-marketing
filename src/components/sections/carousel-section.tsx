@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 
 interface CarouselImage {
   id: string
-  src: string // Can be full URL or Cloudinary ID
+  src: string
   alt: string
   title?: string
   description?: string

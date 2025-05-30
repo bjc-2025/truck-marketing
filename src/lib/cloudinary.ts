@@ -1,6 +1,7 @@
-// lib/cloudinary.ts (example utility file)
+// src/lib/cloudinary.ts
 import { v2 as cloudinary } from 'cloudinary';
 
+// Configure Cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -8,6 +9,7 @@ cloudinary.config({
   secure: true,
 });
 
+// Define the CloudinaryImage interface
 export interface CloudinaryImage {
   id: string; // public_id
   src: string; // secure_url
@@ -36,32 +38,25 @@ export async function getImagesFromFolder(folderName: string): Promise<Cloudinar
       const title = resource.context?.caption || resource.context?.title || '';
       const description = resource.context?.description || '';
 
-      // Create a thumbnail URL using Cloudinary transformations
+      // Create thumbnail with preserved aspect ratio - NO format parameter
       const thumbnailUrl = cloudinary.url(resource.public_id, {
-        width: 400,
-        height: 300, // Adjust based on desired thumbnail aspect ratio
-        crop: 'fill', // Or 'fit', 'limit', 'pad', etc.
-        gravity: 'auto',
+        width: 600,
+        crop: 'limit',
         quality: 'auto:good',
-        format: 'webp', // Or 'avif', 'jpg'
+        // Remove format: 'auto' to prevent .auto extension
       });
       
-      // You might want a slightly larger version for the main lightbox display,
-      // or use the original `secure_url` and let the lightbox handle resizing.
-      // For the lightbox `src`, you might want to limit dimensions for performance
-      // or use `resource.secure_url` if originals are already reasonably sized.
+      // Lightbox version with preserved aspect ratio - NO format parameter
       const lightboxSrcUrl = cloudinary.url(resource.public_id, {
-        width: 1200, // Max width for lightbox
-        height: 1200, // Max height for lightbox
-        crop: 'limit', // Maintain aspect ratio, fit within dimensions
+        width: 1920,
+        crop: 'limit',
         quality: 'auto:best',
-        format: 'webp',
+        // Remove format: 'auto' to prevent .auto extension
       });
-
 
       return {
         id: resource.public_id,
-        src: lightboxSrcUrl, // Or resource.secure_url
+        src: lightboxSrcUrl,
         thumbnailSrc: thumbnailUrl,
         alt: altText,
         width: resource.width,
@@ -75,3 +70,6 @@ export async function getImagesFromFolder(folderName: string): Promise<Cloudinar
     return [];
   }
 }
+
+// Export cloudinary instance if needed elsewhere
+export { cloudinary };
