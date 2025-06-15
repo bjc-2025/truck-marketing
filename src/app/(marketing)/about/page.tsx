@@ -1,6 +1,7 @@
 // src/app/about/page.tsx
 
 import React from 'react'; // Import React
+import Image from 'next/image';
 import { Badge } from "@/components/ui/badge"; // This import is assumed to work based on the prompt context
 import { CheckCircle, MapPin, Zap, Target, DollarSign, Users, LucideIcon } from "lucide-react";
 import { ContactCTA } from "@/components/sections/cta-section"; // Importing the Contact CTA component
@@ -113,11 +114,12 @@ export default function AboutPage() {
         {/* HERO HEADER */}
         <header className="relative flex items-center justify-center text-center text-white overflow-hidden py-24 md:py-32">
           <div className="absolute inset-0">
-            {/* Replaced next/image with standard img tag */}
-            <img
+            <Image
               src="https://res.cloudinary.com/dvwug91mb/image/upload/v1747977431/DSC_0147-Enhanced-NR-Edit_i0we4o.jpg"
               alt="An Australian freight truck driving on a highway at sunset, representing transport logistics"
-              className="object-cover w-full h-full"
+              fill
+              className="object-cover"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-slate-900/30" />
           </div>
@@ -129,7 +131,7 @@ export default function AboutPage() {
               Small Team, <span className="text-truck-orange-400">Big Results.</span>
             </h1>
             <p className="mt-6 text-xl text-slate-200 max-w-3xl mx-auto">
-              We're the dedicated marketing partner for Australia's transport industry, delivering road-tested strategies that move your business forward.
+              We&apos;re the dedicated marketing partner for Australia&apos;s transport industry, delivering road-tested strategies that move your business forward.
             </p>
           </div>
         </header>
@@ -147,15 +149,16 @@ export default function AboutPage() {
                   While other agencies offer generic solutions, we live and breathe transport. We know the difference between a prime mover and a rigid, we understand the regulatory pressures, and we respect the immense pride that comes with keeping Australia’s wheels turning.
                 </p>
                 <p>
-                  From our home base, we've criss-crossed the nation, partnering with transport companies of all sizes. No destination is too remote. When Australian transport businesses need real-world results, they call us.
+                  From our home base, we&apos;ve criss-crossed the nation, partnering with transport companies of all sizes. No destination is too remote. When Australian transport businesses need real-world results, they call us.
                 </p>
               </div>
               <div className="lg:col-span-2">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl lg:rotate-3 transition-transform hover:rotate-0 hover:scale-105 duration-300">
-                   {/* Replaced next/image with standard img tag */}
-                  <img
+                  <Image
                     src="https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp"
                     alt="The Truck Marketing creative team collaborating on a project in their Albury office"
+                    width={500}
+                    height={400}
                     className="w-full h-auto"
                   />
                 </div>
