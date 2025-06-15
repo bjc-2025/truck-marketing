@@ -33,6 +33,9 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `${study.title} Case Study | Truck Marketing Solutions`,
     description: study.overview,
+    alternates: {
+      canonical: `https://truckmarketing.com.au/case-studies/${study.slug}`,
+    },
     openGraph: {
       title: `${study.title} Case Study`,
       description: study.overview,
@@ -56,7 +59,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link 
             href="/case-studies"
-            className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+            className="inline-flex items-center text-gray-600 hover:text-blue-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Case Studies
@@ -64,7 +67,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section (Unchanged) */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-blue-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
         {study.heroImage && (
@@ -133,7 +136,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Image Carousel */}
+      {/* Image Carousel (Unchanged) */}
       {study.imageCarousel.some(img => img) && (
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
@@ -153,40 +156,44 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </section>
       )}
 
+      {/* --- STYLES IMPROVED --- */}
       {/* Overview Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Project Overview</h2>
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-600 leading-relaxed text-lg">
-              {study.overview}
-            </p>
-          </div>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-base font-semibold text-blue-600 tracking-wider uppercase">The Foundation</p>
+          <h2 className="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight">
+            Project Overview
+          </h2>
+          <p className="mt-6 text-xl text-gray-600 leading-8">
+            {study.overview}
+          </p>
         </div>
       </section>
 
       {/* Challenges Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-orange-200">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Target className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Challenges We Addressed</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Every successful project starts with understanding the obstacles and pain points that need to be overcome.
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-orange-100 mb-4">
+                <Target className="w-8 h-8 text-orange-600" />
+            </div>
+            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Challenges We Addressed</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
+              Understanding the obstacles was the first step toward creating impactful solutions.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {study.challenges.map((challenge) => (
-              <div key={challenge.id} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div key={challenge.id} className="relative p-8 bg-slate-50 rounded-xl border border-transparent hover:border-orange-200 hover:shadow-lg transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                    <span className="text-orange-600 font-bold text-sm">{challenge.id}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">{challenge.title}</h3>
-                    <p className="text-gray-600">{challenge.description}</p>
-                  </div>
+                    <div className="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                        {challenge.id}
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-bold text-gray-900">{challenge.title}</h3>
+                        <p className="mt-2 text-gray-600">{challenge.description}</p>
+                    </div>
                 </div>
               </div>
             ))}
@@ -195,42 +202,44 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {/* Approach Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <Lightbulb className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Strategic Approach</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              How we tackled each challenge with innovative solutions and proven methodologies.
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-500 mb-4">
+                <Lightbulb className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-4xl font-extrabold tracking-tight">Our Strategic Approach</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-300">
+              We executed a multi-faceted strategy to tackle each challenge head-on.
             </p>
           </div>
           
-          <div className="space-y-8">
-            {study.approach.map((section,) => (
-              <div key={section.id} className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
-                <div className="grid lg:grid-cols-3 gap-8 items-start">
-                  <div className="lg:col-span-1">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
-                        <span className="text-white font-bold">{section.id}</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900">{section.title}</h3>
+          <div className="relative max-w-5xl mx-auto">
+             <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-slate-700 hidden lg:block" aria-hidden="true"></div>
+            {study.approach.map((section, index) => (
+              <div key={section.id} className="relative lg:grid lg:grid-cols-2 lg:gap-16 items-start mb-16">
+                 <div className="lg:col-start-1">
+                    <div className={`lg:sticky top-24 ${index % 2 === 0 ? 'lg:text-right lg:pr-16' : 'lg:text-left lg:pl-16'}`}>
+                        <div className="flex items-center gap-4 lg:justify-normal">
+                             <div className="order-1 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                {section.id}
+                            </div>
+                            <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+                        </div>
+                        <p className="mt-4 text-slate-300">{section.description}</p>
                     </div>
-                  </div>
-                  
-                  <div className="lg:col-span-2">
-                    <p className="text-gray-700 mb-4">{section.description}</p>
+                </div>
+                <div className="mt-8 lg:mt-0 lg:col-start-2">
                     {section.bullets && (
-                      <ul className="space-y-2">
+                      <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 space-y-4">
                         {section.bullets.map((bullet, bulletIndex) => (
-                          <li key={bulletIndex} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-600">{bullet}</span>
-                          </li>
+                          <div key={bulletIndex} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                            <span className="text-slate-200">{bullet}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     )}
-                  </div>
                 </div>
               </div>
             ))}
@@ -239,27 +248,31 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {/* Results Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-orange-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Measurable Results</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-100 mb-4">
+                <TrendingUp className="w-8 h-8 text-green-600" />
+            </div>
+            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Measurable Results</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
               The tangible outcomes and improvements achieved through our strategic partnership.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {study.results.map((result) => (
-              <div key={result.id} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-orange-500">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-orange-600" />
-                  {result.title}
-                </h3>
-                <p className="text-gray-600">{result.description}</p>
+              <div key={result.id} className="bg-slate-50 rounded-2xl p-8 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-xl border-t-4 border-green-400">
+                <div className="flex justify-center items-center mx-auto bg-green-500 text-white rounded-full w-16 h-16 -mt-16 ring-8 ring-slate-50">
+                    <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="mt-6 text-xl font-bold text-gray-900">{result.title}</h3>
+                <p className="mt-2 text-base text-gray-600 flex-grow">{result.description}</p>
                 {result.metrics && (
-                  <div className="mt-4 p-3 bg-green-50 rounded-lg">
-                    <span className="text-green-800 font-medium">{result.metrics}</span>
+                  <div className="mt-6">
+                    <p className="text-5xl font-extrabold text-green-600">
+                      {result.metrics}
+                    </p>
                   </div>
                 )}
               </div>
@@ -267,8 +280,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      {/* --- END OF IMPROVED STYLES --- */}
 
-      {/* Masonry Gallery */}
+      {/* Masonry Gallery (Unchanged) */}
       {study.masonryGallery.some(img => img) && (
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -293,7 +307,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
       )}
 
 
-      {/* Related Case Studies */}
+      {/* Related Case Studies (Unchanged) */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 border-t">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">More Success Stories</h2>

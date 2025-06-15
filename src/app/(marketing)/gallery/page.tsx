@@ -4,8 +4,13 @@ import GalleryClientComponent from './gallery-client';
 import { getImagesFromFolder, CloudinaryImage } from '@/lib/cloudinary'; // Adjust path
 
 // --- SEO & METADATA ---
-// ... (your metadata remains the same) ...
-export const metadata: Metadata = { /* ... */ };
+export const metadata: Metadata = {
+  title: 'Gallery - Trucking & Logistics Fleet Photos',
+  description: 'Browse our gallery of professional trucking fleet photos, logistics operations, and transport vehicles from our clients across Australia.',
+  alternates: {
+    canonical: 'https://truckmarketing.com.au/gallery',
+  },
+};
 
 // --- PAGE COMPONENT (Server Component) ---
 export default async function GalleryPage() {

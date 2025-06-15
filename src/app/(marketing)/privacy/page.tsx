@@ -8,6 +8,9 @@ import { ArrowLeft, Shield, Mail, Phone, MapPin, CheckCircle, Users, Lock, Eye, 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Truck Marketing',
   description: 'Read our privacy policy to understand how we collect, use, and protect your information at Truck Marketing.',
+  alternates: {
+    canonical: 'https://truckmarketing.com.au/privacy',
+  },
 }
 
 const privacySections = [

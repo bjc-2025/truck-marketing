@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Service - Trucking Marketing Experts',
   description: 'Read our terms of service to understand the conditions for using our website and services.',
+  alternates: {
+    canonical: 'https://truckmarketing.com.au/terms-of-service',
+  },
 }
 
 export default function TermsOfServicePage() {

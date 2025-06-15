@@ -209,10 +209,6 @@ function generateStructuredData(service: ServiceInfo, slug: string) {
       }
     }))
   };
-
-  // You can return multiple schemas as an array, or link them using properties like 'mainEntity'
-  // or 'hasPart'. Returning them separately in different script tags is also valid and often simpler.
-  // We'll embed them as separate script tags in the JSX.
   return { serviceSchema, faqSchema };
 }
 

@@ -61,6 +61,13 @@ const defaultImages: CarouselImage[] = [
     alt: "Grow Your Trucking Business",
     title: "Grow Your Trucking Business",
     description: "Proven strategies to boost your trucking business"
+  },
+    {
+    id: "6",
+    src: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748992868/DJI_20250531095424_0082_D_fmfqbi.jpg",
+    alt: "Scale up your buisiness",
+    title: "Scale Up Your Business",
+    description: "Proven strategies to boost your trucking business"
   }
 ]
 

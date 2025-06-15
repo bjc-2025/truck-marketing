@@ -72,7 +72,7 @@ const services: NavSection = {
     {
       title: "Performance Analytics",
       href: "/services/analytics-reporting",
-      description: "Track and optimize your marketing ROI",
+      description: "Track and optimise your marketing ROI",
       icon: BarChart3,
       priority: 'medium'
     },

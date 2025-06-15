@@ -154,18 +154,6 @@ const ContactInfoSection: React.FC<{ contactInfo: ContactInfo }> = ({ contactInf
         </div>
       </div>
     </div>
-    
-    <div className="bg-truck-orange-50 border border-truck-orange-200 rounded-lg p-4">
-      <div className="flex items-center gap-2 mb-2">
-        <CheckCircle className="h-4 w-4 text-truck-orange-600" />
-        <span className="font-medium text-truck-orange-800">Free Consultation Includes:</span>
-      </div>
-      <ul className="text-sm text-truck-orange-700 space-y-1">
-        <li>• Marketing performance audit</li>
-        <li>• Growth opportunity analysis</li>
-        <li>• Custom strategy recommendations</li>
-      </ul>
-    </div>
   </div>
 )
 
@@ -333,12 +321,12 @@ const FormContent: React.FC<{
     </div>
     
     <div className="space-y-2">
-      <Label htmlFor="message">Tell us about your marketing goals</Label>
+      <Label htmlFor="message">Your Message</Label>
       <Textarea
         id="message"
         value={formData.message}
         onChange={(e) => onInputChange("message", e.target.value)}
-        placeholder="What marketing challenges are you facing? What results are you looking to achieve?"
+        placeholder="Tell us about your project or how we can help."
         rows={4}
         disabled={isSubmitting}
       />
@@ -369,7 +357,7 @@ const FormContent: React.FC<{
         </>
       ) : (
         <>
-          Get My Free Strategy Session
+          Send Message
           <Send className="ml-2 h-5 w-5" />
         </>
       )}
@@ -383,8 +371,8 @@ const FormContent: React.FC<{
 
 // Main Component
 export function ContactForm({ 
-  title = "Get Your Free Marketing Strategy Session",
-  description = "Tell us about your trucking business and we'll show you how to accelerate your growth.",
+  title = "Get In Touch",
+  description = "Have a question? Fill out the form below and a member of our team will get back to you shortly.",
   showContactInfo = true,
   variant = "default",
   contactInfo = DEFAULT_CONTACT_INFO

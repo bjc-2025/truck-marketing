@@ -57,7 +57,6 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: post.metaTitle || `${post.title} | Truck Marketing Blog`,
     description: post.metaDescription || post.description,
     keywords: post.tags,
-    authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.description,

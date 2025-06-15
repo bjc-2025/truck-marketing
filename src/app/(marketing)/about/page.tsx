@@ -1,232 +1,197 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
+// src/app/about/page.tsx
 
-import { Badge } from "@/components/ui/badge"
-import TeamSection from "@/components/sections/team-section"
-import { ContactCTA } from "@/components/sections/cta-section"
-import { CheckCircle, MapPin, Zap, Target, DollarSign, Users } from "lucide-react"
+import React from 'react'; // Import React
+import { Badge } from "@/components/ui/badge"; // This import is assumed to work based on the prompt context
+import { CheckCircle, MapPin, Zap, Target, DollarSign, Users, LucideIcon } from "lucide-react";
+import { ContactCTA } from "@/components/sections/cta-section"; // Importing the Contact CTA component
+import  TeamSection  from "@/components/sections/team-section"; // Assuming you have a team section component
 
-const cloudinaryOgImageUrl = 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp';
-const cloudinaryTwitterImageUrl = 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp'; // Example: Twitter might prefer a slightly different crop or size
+// --- SEO & PAGE CONFIGURATION ---
+// Centralized configuration for easy updates.
+const pageConfig = {
+  title: "About Us | Australian Truck & Logistics Marketing Agency",
+  description: "Learn how our specialist marketing team in Albury Wodonga drives growth for transport companies across Australia. We offer road-tested strategies with measurable ROI.",
+  url: "https://www.truckmarketing.com/about", // Replace with your production URL
+  ogImage: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp",
+  companyName: "Truck Marketing",
+  address: {
+    street: "Level 1/553 Dean St",
+    city: "Albury",
+    state: "NSW",
+    postalCode: "2640",
+    country: "AU"
+  }
+};
 
-export const metadata: Metadata = {
-  title: 'About Us - Truck Marketing',
-  description: 'Learn about Truck Marketing and our mission to help trucking companies grow their business.',
+// --- METADATA (Next.js specific - kept for context) ---
+// Note: Metadata export is a Next.js feature and may not be directly usable in all React environments.
+export const metadata = {
+  title: pageConfig.title,
+  description: pageConfig.description,
+  keywords: ['truck marketing agency', 'transport logistics marketing', 'freight marketing Australia', 'heavy vehicle marketing', 'about truck marketing', 'Albury Wodonga marketing'],
+  robots: { index: true, follow: true },
+  alternates: { canonical: pageConfig.url },
   openGraph: {
-    title: 'About Us - Truck Marketing',
-    description: 'Learn about Truck Marketing and our mission to help trucking companies grow their business.',
-    url: 'https://www.truckmarketing.com/about', // Your page's canonical URL
-    siteName: 'Truck Marketing',
-    images: [
-      {
-        url: cloudinaryOgImageUrl, // <-- USE CLOUDINARY URL HERE
-        width: 1200,             // Should match the w_1200 in the Cloudinary URL
-        height: 630,             // Should match the h_630 in the Cloudinary URL
-        alt: 'About Truck Marketing - Driving Success',
-      },
-      // You could add more images if desired, e.g., different aspect ratios
-    ],
-    type: 'website', // Good to specify
+    title: pageConfig.title,
+    description: pageConfig.description,
+    url: pageConfig.url,
+    siteName: pageConfig.companyName,
+    images: [{ url: pageConfig.ogImage, width: 1200, height: 630, alt: `The expert team at ${pageConfig.companyName}` }],
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us - Truck Marketing',
-    description: 'Learn about Truck Marketing and our mission to help trucking companies grow their business.',
-    // site: '@YourTwitterHandle', // Optional: your site's Twitter handle
-    // creator: '@CreatorTwitterHandle', // Optional: content creator's Twitter handle
-    images: [cloudinaryTwitterImageUrl], // <-- USE CLOUDINARY URL HERE
+    title: pageConfig.title,
+    description: pageConfig.description,
+    images: [pageConfig.ogImage],
   },
-  keywords: ['trucking', 'marketing', 'business growth', 'logistics', 'transportation', 'truck marketing agency'],
-  robots: {
-    index: true,
-    follow: true,
+};
+
+// --- JSON-LD STRUCTURED DATA (FOR ADVANCED SEO) ---
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MarketingAgency',
+  name: pageConfig.companyName,
+  url: pageConfig.url,
+  logo: pageConfig.ogImage,
+  description: pageConfig.description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: pageConfig.address.street,
+    addressLocality: pageConfig.address.city,
+    addressRegion: pageConfig.address.state,
+    postalCode: pageConfig.address.postalCode,
+    addressCountry: pageConfig.address.country,
   },
-  // Optional: Add a canonical URL if this page can be reached via multiple URLs
-  alternates: {
-    canonical: 'https://www.truckmarketing.com/about',
-  }
+  areaServed: {
+    '@type': 'Country',
+    name: 'Australia',
+  },
+  contactPoint: {
+      "@type": "ContactPoint",
+      "telephone": "+61-XXXX-XXXX", // Add your phone number here
+      "contactType": "customer service"
+  },
+  sameAs: []
+};
+
+// --- MOCK COMPONENTS (to resolve import errors) ---
+// In a real Next.js app, these would be in separate files.
+// For this self-contained example, they are defined here.
+
+
+
+// --- REUSABLE VALUE CARD COMPONENT ---
+interface ValueCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
 }
 
+const ValueCard = ({ icon: Icon, title, description }: ValueCardProps) => (
+  <div className="bg-slate-800/50 rounded-xl p-8 text-center border border-slate-700 hover:bg-slate-800 hover:border-truck-orange-500 transition-all duration-300">
+    <div className="inline-flex items-center justify-center w-14 h-14 bg-truck-orange-500 rounded-full mb-6">
+      <Icon className="h-7 w-7 text-white" />
+    </div>
+    <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+    <p className="text-slate-300">{description}</p>
+  </div>
+);
+
+
+// --- THE ABOUT PAGE COMPONENT ---
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[70vh] flex items-center">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://res.cloudinary.com/dvwug91mb/image/upload/v1747977431/DSC_0147-Enhanced-NR-Edit_i0we4o.jpg')`
-          }}
-        />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      <div className="bg-white">
         
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/60" />
-        
-        {/* Blue gradient overlay for brand consistency */}
-        <div className="absolute inset-0 bg-black/40" />
-        
-        <div className="relative container-wide section-padding">
-          <div className="text-center">
-            <Badge 
-              variant="secondary" 
-              className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20"
-            >
+        {/* HERO HEADER */}
+        <header className="relative flex items-center justify-center text-center text-white overflow-hidden py-24 md:py-32">
+          <div className="absolute inset-0">
+            {/* Replaced next/image with standard img tag */}
+            <img
+              src="https://res.cloudinary.com/dvwug91mb/image/upload/v1747977431/DSC_0147-Enhanced-NR-Edit_i0we4o.jpg"
+              alt="An Australian freight truck driving on a highway at sunset, representing transport logistics"
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-slate-900/30" />
+          </div>
+          <div className="relative z-10 container-wide">
+            <Badge  className="mb-6 bg-white/10 border-white/20 hover:bg-white/20">
               Trucking & Logistics Marketing Specialists
             </Badge>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-display-lg font-bold text-white mb-6">
-              About Truck Marketing
-              <span className="block text-truck-orange-500 mt-2">
-                Small Team, Big Results
-              </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+              Small Team, <span className="text-truck-orange-400">Big Results.</span>
             </h1>
-            
-            <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
-              Were the marketing agency that speaks your language - the language of the road, logistics, and getting results that move your business forward.
+            <p className="mt-6 text-xl text-slate-200 max-w-3xl mx-auto">
+              We're the dedicated marketing partner for Australia's transport industry, delivering road-tested strategies that move your business forward.
             </p>
           </div>
-        </div>
-      </section>
+        </header>
 
-      {/* Main Content */}
-      <div className="   section-padding">
-        
-        {/* Our Story Section */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Our Story</h2>
-            <div className="prose prose-lg mx-auto text-gray-700 leading-relaxed">
-              <p className="text-xl mb-6">
-                Born from the heart of Australias transport corridor in Albury Wodonga, Truck Marketing was founded on a simple belief: the trucking and logistics industry deserves marketing that understands the unique challenges, opportunities, and spirit of life on the road.
-              </p>
-              <p className="mb-6">
-                While other agencies try to apply generic strategies to every industry, weve made trucking and logistics our specialty. We know that a campaign that works for a tech startup wont necessarily work for a freight company. We understand the regulatory environment, the tight margins, the importance of safety, and the pride that comes with keeping Australia moving.
-              </p>
-              <p className="mb-6">
-                From our base in Albury Wodonga, weve traveled the length and breadth of Australia, working with trucking companies from the red dirt of the Pilbara to the bustling ports of Sydney. No job is too far, no challenge too big. When Australian trucking companies need results, they call us.
-              </p>
+        {/* MAIN CONTENT AREA */}
+        <main>
+          <section className="py-20 md:py-24">
+            <div className="container-wide grid lg:grid-cols-5 gap-x-12 gap-y-12 items-center">
+              <div className="lg:col-span-3 prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <h2>Our Story: Born from the Transport Corridor</h2>
+                <p>
+                  Founded in Albury Wodonga, the heart of Australia’s transport corridor, Truck Marketing was built on a simple premise: the logistics industry deserves marketing that speaks its language and understands its unique DNA.
+                </p>
+                <p>
+                  While other agencies offer generic solutions, we live and breathe transport. We know the difference between a prime mover and a rigid, we understand the regulatory pressures, and we respect the immense pride that comes with keeping Australia’s wheels turning.
+                </p>
+                <p>
+                  From our home base, we've criss-crossed the nation, partnering with transport companies of all sizes. No destination is too remote. When Australian transport businesses need real-world results, they call us.
+                </p>
+              </div>
+              <div className="lg:col-span-2">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl lg:rotate-3 transition-transform hover:rotate-0 hover:scale-105 duration-300">
+                   {/* Replaced next/image with standard img tag */}
+                  <img
+                    src="https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp"
+                    alt="The Truck Marketing creative team collaborating on a project in their Albury office"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Team Photo Section */}
-        <section className="mb-16">
-          <div className="max-w-6xl mx-auto text-center">
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-200">
-              <div className="relative w-full max-w-3xl mx-auto mb-6 rounded-lg overflow-hidden">
-                <Image 
-                  src="https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp" 
-                  alt="Truck Marketing Team" 
-                  width={800}
-                  height={600}
-                  className="w-full h-auto shadow-md"
-                  priority
-                />
+          <section className="bg-slate-900 text-white py-20 md:py-24">
+            <div className="container-wide">
+              <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-4xl font-bold tracking-tight">Why The Toughest Companies Choose Us</h2>
+                <p className="mt-4 text-lg text-slate-300">
+                  Our approach is built on industry expertise, nationwide reach, and a relentless focus on your bottom line.
+                </p>
               </div>
-              <p className="text-lg text-gray-600 italic">
-                Small team, big impact. Were the marketing muscle behind Australias most successful trucking companies.
-              </p>
+              <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ValueCard icon={CheckCircle} title="Trucking Is All We Do" description="We are industry specialists. This singular focus makes us exceptionally good at creating marketing that gets results for transport companies." />
+                <ValueCard icon={MapPin} title="National Reach, Local Heart" description="Based in Albury Wodonga, we're ready to deploy anywhere in Australia. Your success is always worth the journey for our team." />
+                <ValueCard icon={Zap} title="Agile & Results-Driven" description="As a lean team, we skip the bureaucracy and focus on one thing: delivering tangible results that drive your business forward." />
+                <ValueCard icon={Target} title="Road-Tested Strategies" description="Our marketing playbooks are proven on the tarmac, not just in theory. We know what works because we've seen it succeed." />
+                <ValueCard icon={DollarSign} title="Focused on Your ROI" description="Every marketing dollar you invest with us is engineered to deliver a powerful return. We measure our success by your growth." />
+                <ValueCard icon={Users} title="A True Partnership" description="You get direct access to our core team. We build personalized strategies because you're our partner, not just a client number." />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Why Choose Us Section */}
-        <section className="mb-16">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Why Trucking Companies Choose Us</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-200">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-truck-orange-500 rounded-lg mb-6">
-                  <CheckCircle className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Industry Specialists</h3>
-                <p className="text-gray-600">
-                  We dont do marketing for everyone. We do marketing for trucking and logistics companies, and we do it better than anyone else.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-200">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-truck-orange-500 rounded-lg mb-6">
-                  <MapPin className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Nationwide Reach</h3>
-                <p className="text-gray-600">
-                  Based in Albury Wodonga but ready to travel anywhere in Australia. Your success is worth the journey.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-200">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-truck-orange-500 rounded-lg mb-6">
-                  <Zap className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Small Team, Big Results</h3>
-                <p className="text-gray-600">
-                  Were lean, agile, and focused. No bureaucracy, no endless meetings - just results that drive your business forward.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-200">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-truck-orange-500 rounded-lg mb-6">
-                  <Target className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Proven Strategies</h3>
-                <p className="text-gray-600">
-                  Our marketing strategies are road-tested and results-proven. We know what works in trucking because its all we do.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-200">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-truck-orange-500 rounded-lg mb-6">
-                  <DollarSign className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">ROI-Focused</h3>
-                <p className="text-gray-600">
-                  Every dollar you invest with us is designed to generate more dollars back. We measure success by your bottom line growth.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow border border-gray-200">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-truck-orange-500 rounded-lg mb-6">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Personal Service</h3>
-                <p className="text-gray-600">
-                  Youre not just another client number. You get direct access to our team and personalized strategies for your unique business.
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Mission Section */}
-        <section className="container-wide relative overflow-hidden rounded-2xl mb-16">
-          {/* Background with overlay */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('https://res.cloudinary.com/dvwug91mb/image/upload/v1747977431/DSC_0147-Enhanced-NR-Edit_i0we4o.jpg')`
-            }}
-          />
-          <div className="absolute inset-0 bg-black/70" />
+          <section className="py-20 md:py-24">
+            <TeamSection />
+          </section>
           
-          <div className="relative p-12 text-center text-white">
-            <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
-            <p className="text-xl leading-relaxed max-w-4xl mx-auto">
-              To be the driving force behind the growth of Australias trucking and logistics companies. Were not just marketers - were partners in your success, dedicated to helping you build stronger brands, attract better clients, and grow more profitable businesses.
-            </p>
-          </div>
-        </section>
+          <section>
+            <ContactCTA />
+          </section>
 
-
-        <TeamSection />
-
-        {/* Call to Action Section */}
-        <ContactCTA />
-  
+        </main>
       </div>
-    </div>
-  )
+    </>
+  );
 }

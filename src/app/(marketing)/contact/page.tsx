@@ -61,9 +61,74 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://truckmarketing.com.au/#business',
+    name: 'Truck Marketing',
+    description: 'Expert marketing agency specializing in digital marketing for trucking and logistics companies across Australia.',
+    url: 'https://truckmarketing.com.au/contact',
+    telephone: '+61491999011',
+    email: 'autruckmarketing@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '1 Stead Street',
+      addressLocality: 'Wodonga',
+      addressRegion: 'VIC',
+      postalCode: '3690',
+      addressCountry: 'AU',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -36.1217,
+      longitude: 146.8850,
+    },
+    image: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1735969648/Truck_Marketing_brj8yq.png',
+    priceRange: '$$',
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+    sameAs: [
+      'https://www.facebook.com/truckmarketing',
+      'https://www.linkedin.com/company/truck-marketing',
+      'https://twitter.com/truckmarketing'
+    ],
+    areaServed: [
+      {
+        '@type': 'State',
+        name: 'Victoria',
+        containedInPlace: {
+          '@type': 'Country',
+          name: 'Australia'
+        }
+      },
+      {
+        '@type': 'State',
+        name: 'New South Wales',
+        containedInPlace: {
+          '@type': 'Country',
+          name: 'Australia'
+        }
+      },
+      {
+        '@type': 'Country',
+        name: 'Australia'
+      }
+    ],
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <ContactForm />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 py-8">
+        <ContactForm />
+      </div>
+    </>
   )
 }

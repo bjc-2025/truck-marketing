@@ -51,7 +51,7 @@ const defaultServices: Service[] = [
     id: "ppc-advertising",
     title: "PPC for Haulage",
     description: "Maximise your ad spend with pay-per-click campaigns that deliver results for haulage companies.",
-    benefits: ["Route-specific targeting", "Cost-per-acquisition focus", "Real-time optimization"],
+    benefits: ["Route-specific targeting", "Cost-per-acquisition focus", "Real-time optimisation"],
     icon: Target,
     href: "/services/ppc-for-haulage"
   },

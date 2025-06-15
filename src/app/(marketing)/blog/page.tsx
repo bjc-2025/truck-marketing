@@ -102,7 +102,7 @@ export default function BlogPage() {
               <span className="block text-accent mt-2">Insights & Strategies</span>
             </h1>
             
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl text-white max-w-3xl mx-auto mb-12 leading-relaxed">
               Stay ahead of the competition with expert insights, proven strategies, 
               and industry trends tailored specifically for trucking and logistics companies.
             </p>

@@ -141,7 +141,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
     ],
     process: [
       { title: 'Industry Analysis', desc: 'We analyse your routes, services, and competition to identify high-value keywords' },
-      { title: 'On-Page Optimization', desc: 'Optimise your website content, meta tags, and structure for trucking-specific searches' },
+      { title: 'On-Page Optimisation', desc: 'Optimise your website content, meta tags, and structure for trucking-specific searches' },
       { title: 'Local SEO Dominance', desc: 'Claim and optimise your Google Business Profile for every terminal and route' },
       { title: 'Content Strategy', desc: 'Create valuable content that positions you as an industry authority' }
     ],
@@ -150,12 +150,12 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'Search', // Changed from Search to 'Search'
         title: 'Route-Based Keyword Targeting',
-        description: 'Target specific shipping lanes and routes with geo-optimized keywords that capture high-intent searches from shippers looking for carriers on your lanes.'
+        description: 'Target specific shipping lanes and routes with geo-optimised keywords that capture high-intent searches from shippers looking for carriers on your lanes.'
       },
       {
         icon: 'MapPin', // Changed from MapPin to 'MapPin'
-        title: 'Google Business Profile Optimization',
-        description: 'Claim and optimize your GBP listings for every terminal and service area, ensuring you appear in local searches and Google Maps results.'
+        title: 'Google Business Profile Optimisation',
+        description: 'Claim and optimise your GBP listings for every terminal and service area, ensuring you appear in local searches and Google Maps results.'
       },
       {
         icon: 'Globe', // Changed from Globe to 'Globe'
@@ -164,7 +164,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       },
       {
         icon: 'Smartphone', // Changed from Smartphone to 'Smartphone'
-        title: 'Mobile-First Optimization',
+        title: 'Mobile-First Optimisation',
         description: 'Ensure your site loads lightning-fast on mobile devices where 60% of trucking searches originate, improving both rankings and user experience.'
       },
       {
@@ -174,8 +174,8 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       },
       {
         icon: 'MessageCircle', // Changed from MessageCircle to 'MessageCircle'
-        title: 'Voice Search Optimization',
-        description: 'Capture voice searches like "trucking companies near me" by optimizing for natural language queries and featured snippets.'
+        title: 'Voice Search Optimisation',
+        description: 'Capture voice searches like "trucking companies near me" by optimising for natural language queries and featured snippets.'
       }
     ],
     faqs: [
@@ -185,11 +185,11 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       },
       {
         question: "Can you help us rank for specific trucking routes?",
-        answer: "Absolutely! We specialize in route-based SEO, helping you rank for searches like 'trucking from Chicago to Atlanta' or 'freight shipping to California'. This targets shippers with specific lane needs."
+        answer: "Absolutely! We specialise in route-based SEO, helping you rank for searches like 'trucking from Chicago to Atlanta' or 'freight shipping to California'. This targets shippers with specific lane needs."
       },
       {
         question: "What if we operate in multiple states?",
-        answer: "We optimize for multi-state operations by creating location-specific pages and local SEO strategies for each terminal or major operating area, ensuring you're found wherever you operate."
+        answer: "We optimise for multi-state operations by creating location-specific pages and local SEO strategies for each terminal or major operating area, ensuring you're found wherever you operate."
       }
     ]
   },
@@ -222,27 +222,27 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'Mail', // Changed from Mail to 'Mail'
         title: 'Email Marketing Automation',
-        description: 'Deploy sophisticated email campaigns with personalized messaging, automated follow-ups, and behavior-triggered sequences that nurture leads effectively.'
+        description: 'Deploy sophisticated email campaigns with personalised messaging, automated follow-ups, and behaviour-triggered sequences that nurture leads effectively.'
       },
       {
         icon: 'Users', // Changed from Users to 'Users'
         title: 'LinkedIn Outreach Campaigns',
-        description: 'Connect with decision-makers through targeted LinkedIn campaigns, leveraging advanced search filters and personalized connection strategies.'
+        description: 'Connect with decision-makers through targeted LinkedIn campaigns, leveraging advanced search filters and personalised connection strategies.'
       },
       {
         icon: 'Target', // Changed from Target to 'Target'
-        title: 'Landing Page Optimization',
-        description: 'Create high-converting landing pages tailored to specific industries and shipping needs, with A/B testing to maximize conversion rates.'
+        title: 'Landing Page Optimisation',
+        description: 'Create high-converting landing pages tailored to specific industries and shipping needs, with A/B testing to maximise conversion rates.'
       },
       {
         icon: 'BarChart', // Changed from BarChart to 'BarChart'
         title: 'Lead Scoring System',
-        description: 'Automatically score and prioritize leads based on shipping frequency, volume, lane compatibility, and engagement level to focus on the best opportunities.'
+        description: 'Automatically score and prioritise leads based on shipping frequency, volume, lane compatibility, and engagement level to focus on the best opportunities.'
       },
       {
         icon: 'TrendingUp', // Changed from TrendingUp to 'TrendingUp'
         title: 'Real-Time Reporting Dashboard',
-        description: 'Track campaign performance, lead quality, and ROI with our comprehensive dashboard that provides actionable insights and optimization recommendations.'
+        description: 'Track campaign performance, lead quality, and ROI with our comprehensive dashboard that provides actionable insights and optimisation recommendations.'
       }
     ],
     faqs: [
@@ -289,7 +289,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'Truck', // Changed from Truck to 'Truck'
         title: 'Fleet Showcase Galleries',
-        description: 'Professional photo galleries displaying your trucks, trailers, and equipment with detailed specifications. High-quality image optimization ensures fast loading while showcasing your fleet\'s capabilities.'
+        description: 'Professional photo galleries displaying your trucks, trailers, and equipment with detailed specifications. High-quality image optimisation ensures fast loading while showcasing your fleet\'s capabilities.'
       },
       {
         icon: 'Users', // Changed from Users to 'Users'
@@ -309,7 +309,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'Smartphone', // Changed from Smartphone to 'Smartphone'
         title: 'Mobile-Responsive Design',
-        description: 'Fully optimized website that adapts seamlessly to smartphones, tablets, and desktop computers. Touch-friendly navigation and fast loading times ensure accessibility across all devices.'
+        description: 'Fully optimised website that adapts seamlessly to smartphones, tablets, and desktop computers. Touch-friendly navigation and fast loading times ensure accessibility across all devices.'
       }
     ],
     faqs: [
@@ -319,7 +319,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       },
       {
         question: "Can you integrate our website with our existing TMS system?",
-        answer: "Yes, we specialize in integrating trucking websites with popular TMS platforms, load tracking systems, and customer portals. This allows real-time shipment tracking and seamless customer communication."
+        answer: "Yes, we specialise in integrating trucking websites with popular TMS platforms, load tracking systems, and customer portals. This allows real-time shipment tracking and seamless customer communication."
       },
       {
         question: "Will our website work well on mobile devices?",
@@ -370,13 +370,13 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       },
       {
         icon: 'FileText', // Changed from FileText to 'FileText'
-        title: 'Negative Keyword Optimization',
+        title: 'Negative Keyword Optimisation',
         description: 'Continuously refine campaigns by excluding irrelevant searches, saving budget and improving lead quality by focusing only on commercial intent keywords.'
       },
       {
         icon: 'BarChart', // Changed from BarChart to 'BarChart'
         title: 'A/B Testing Framework',
-        description: 'Systematic testing of ad copy, landing pages, and targeting parameters to continuously improve performance and maximize your return on investment.'
+        description: 'Systematic testing of ad copy, landing pages, and targeting parameters to continuously improve performance and maximise your return on investment.'
       }
     ],
     faqs: [
@@ -386,7 +386,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       },
       {
         question: "What's a good budget to start with for trucking PPC?",
-        answer: "Most successful trucking PPC campaigns start with $2,000-5,000 per month, depending on your target markets and competition. We optimize spending to focus on your most profitable lanes and freight types for maximum ROI."
+        answer: "Most successful trucking PPC campaigns start with $2,000-5,000 per month, depending on your target markets and competition. We optimise spending to focus on your most profitable lanes and freight types for maximum ROI."
       },
       {
         question: "Can you target ads to specific shipping lanes?",
@@ -478,7 +478,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       { title: 'Content Strategy', desc: 'Develop a content plan aligned with your business goals' },
       { title: 'Production Planning', desc: 'Schedule shoots and content creation around your operations' },
       { title: 'Content Creation', desc: 'Produce high-quality videos, photos, and written content' },
-      { title: 'Distribution & Optimization', desc: 'Deploy content across channels and optimise for performance' }
+      { title: 'Distribution & Optimisation', desc: 'Deploy content across channels and optimise for performance' }
     ],
     stats: { metric: 'average increase in engagement', value: '289%' },
     features: [
@@ -490,7 +490,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'Camera', // Changed from Camera to 'Camera'
         title: 'Fleet Photography',
-        description: 'Professional photography of your trucks, trailers, and facilities. High-resolution images optimized for web use that showcase your equipment and professionalism.'
+        description: 'Professional photography of your trucks, trailers, and facilities. High-resolution images optimised for web use that showcase your equipment and professionalism.'
       },
       {
         icon: 'FileText', // Changed from FileText to 'FileText'
@@ -624,7 +624,7 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'Target', // Changed from Target to 'Target'
         title: 'Marketing Automation',
-        description: 'Sophisticated automation workflows that nurture leads based on their behavior, sending the right message at the right time to move them toward conversion.'
+        description: 'Sophisticated automation workflows that nurture leads based on their behaviour, sending the right message at the right time to move them toward conversion.'
       },
       {
         icon: 'Users', // Changed from Users to 'Users'
@@ -639,12 +639,12 @@ export const serviceData: Record<ServiceSlug, ServiceInfo> = {
       {
         icon: 'CheckCircle', // Changed from CheckCircle to 'CheckCircle'
         title: 'A/B Testing',
-        description: 'Systematic testing of subject lines, content, and send times to optimize every element of your email campaigns for maximum engagement.'
+        description: 'Systematic testing of subject lines, content, and send times to optimise every element of your email campaigns for maximum engagement.'
       },
       {
         icon: 'Shield', // Changed from Shield to 'Shield'
-        title: 'Deliverability Optimization',
-        description: 'Technical optimization to ensure your emails reach the inbox, including authentication setup, list hygiene, and reputation monitoring.'
+        title: 'Deliverability Optimisation',
+        description: 'Technical optimisation to ensure your emails reach the inbox, including authentication setup, list hygiene, and reputation monitoring.'
       }
     ],
     faqs: [

@@ -1,4 +1,4 @@
-// TypeScript Interface for Case Studies
+
 export interface CaseStudy {
   id: string;
   slug: string;
@@ -8,23 +8,22 @@ export interface CaseStudy {
   industry: string;
   turnover: string;
   status: 'Ongoing' | 'Completed';
-  heroImage: string; // Cloudinary URL
-  imageCarousel: string[]; // Array of Cloudinary URLs
-  masonryGallery: string[]; // Array of Cloudinary URLs for bottom gallery
+  heroImage: string;
+  imageCarousel: string[]; 
+  masonryGallery: string[];
   
-  // Services provided
+
   services: string[];
   
-  // Case study content
+
   overview: string;
   challenges: Challenge[];
   approach: ApproachSection[];
   results: Result[];
-  
-  // Call to action
+
   callToAction: CallToAction;
   
-  // Metadata
+
   createdAt: string;
   updatedAt: string;
   featured: boolean;
@@ -239,16 +238,16 @@ export const caseStudies: CaseStudy[] = [
     imageCarousel: [
       'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229029/DSC_4284-Edit_o3mirq.jpg', 
       'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/Ref-1_n7fdve.jpg', // Cloudinary URL - Team portraits
-      '', // Cloudinary URL - Facility operations
-      '', // Cloudinary URL - Truck loading
-      ''  // Cloudinary URL - On-the-road shots
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015806/KillWeb12_aniddo.jpg', // Cloudinary URL - Facility operations
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015806/KillenWeb11_lqsc4t.jpg', // Cloudinary URL - Truck loading
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015638/Hero4_myavow.jpg'  // Cloudinary URL - On-the-road shots
     ],
     masonryGallery: [
-      '', // Cloudinary URL - Driver interviews
-      '', // Cloudinary URL - Behind-the-scenes footage
-      '', // Cloudinary URL - Fleet lineup
-      '', // Cloudinary URL - Logistics operations
-      '', // Cloudinary URL - Modern fleet
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015645/About-Us-Truck_flk1il.jpg', // Cloudinary URL - Driver interviews
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015805/KillenWeb10_bbx5pg.jpg', // Cloudinary URL - Behind-the-scenes footage
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015638/Hero4_myavow.jpg', // Cloudinary URL - Fleet lineup
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015806/KillWeb12_aniddo.jpg', // Cloudinary URL - Logistics operations
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1749016033/Killens-Mockup-copy-scaled_t4uyov_no1aqa.jpg', // Cloudinary URL - Modern fleet
       '', // Cloudinary URL - Professional team
       '', // Cloudinary URL - Website screenshots
       '', // Cloudinary URL - Brand materials
@@ -353,13 +352,13 @@ export const caseStudies: CaseStudy[] = [
     industry: 'Transport & Logistics',
     turnover: 'Ongoing',
     status: 'Ongoing',
-    heroImage: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/Untitled-1_ksb9pg.jpg', // Cloudinary URL placeholder
+    heroImage: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/Untitled-1_ksb9pg.jpg',
     imageCarousel: [
-      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/Dawsons-Trucking-5_bazffv.jpg', // Cloudinary URL - Fleet and services
-      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229025/Dawsons-Trucking-2_wkbg5h.jpg', // Cloudinary URL - Community initiatives
-      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/dawsons-scaled_yx9ewf.jpg', // Cloudinary URL - Mining transport
-      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748227983/Dawsons-Trucking-5_vzicax.jpg', // Cloudinary URL - Defence partnerships
-      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229025/Dawsons-Trucking-1_zcajjd.jpg'  // Cloudinary URL - Agriculture transportation
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229027/Dawsons-Trucking-5_bazffv.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229025/Dawsons-Trucking-2_wkbg5h.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/dawsons-scaled_yx9ewf.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748227983/Dawsons-Trucking-5_vzicax.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748229025/Dawsons-Trucking-1_zcajjd.jpg' 
     ],
     masonryGallery: [
       '', // Cloudinary URL - Website design
@@ -461,11 +460,6 @@ export const caseStudies: CaseStudy[] = [
         id: 3,
         title: 'Increased Brand Awareness',
         description: 'Increased brand awareness, particularly through their TikTok presence and community-focused content, reaching new audience segments.'
-      },
-      {
-        id: 4,
-        title: 'Stronger Community Connections',
-        description: 'Stronger connections with their audience, highlighting their commitment to both quality service and social responsibility through community partnerships.'
       }
     ],
     callToAction: {
@@ -483,7 +477,263 @@ export const caseStudies: CaseStudy[] = [
     createdAt: '2024-03-10',
     updatedAt: '2024-12-15',
     featured: true
-  }
+  },
+  {
+    id: 'cs-004',
+    slug: 'Scholz-Bulk-Haulage',
+    title: 'Scholz Bulk Haulage',
+    subtitle: 'Uplifting a Family-Owned Transport Business with a Modern Digital Strategy',
+    company: 'Scholz Bulk Haulage',
+    industry: 'Transport & Logistics',
+    turnover: 'Ongoing',
+    status: 'Ongoing',
+    heroImage: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992869/DJI_20250531094431_0054_D_tr3zf2.jpg',
+    imageCarousel: [
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992868/DJI_20250531095424_0082_D_fmfqbi.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992868/044A3293_m5gwzo.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992860/044A3216_rx3zwk.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992856/044A3057_aaomvd.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992851/044A3004_zjcwmx.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992850/044A2851-Edit_cjh9ub.jpg'
+    ],
+    masonryGallery: [
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992866/DJI_20250531095334_0079_D_fdvcc7.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992862/044A3274_dyuew6.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992851/044A2914_ccbeuu.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992853/044A2830_occ0nq.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992854/044A2921_fojvzn.jpg',
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992856/044A3057_aaomvd.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992859/044A3210_zpeyii.jpg', 
+      'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992866/044A3302_e2n2zc.jpg', 
+    ],
+    services: [
+      'Web Design',
+      'Photography',
+      'Video'
+    ],
+  overview: 'At Brandjam Creative, we partnered with Scholz, a leading Australian business, to transform their brand presence through a comprehensive digital strategy featuring professional photography, website development, and video production.',
+  challenges: [
+    {
+      id: 1,
+      title: 'Outdated Visual Identity',
+      description: 'Scholz needed a complete visual refresh to better represent their brand values and showcase their services through professional imagery and modern design.'
+    },
+    {
+      id: 2,
+      title: 'Lack of Professional Content',
+      description: 'Their existing digital presence lacked high-quality photography and video content that could effectively communicate their expertise and brand story.'
+    },
+    {
+      id: 3,
+      title: 'Ineffective Digital Presence',
+      description: 'The company\'s website and digital platforms were not effectively engaging their target audience or showcasing their capabilities.'
+    },
+    {
+      id: 4,
+      title: 'Brand Positioning and Market Reach',
+      description: 'Scholz sought to strengthen their market position and reach new audiences through enhanced digital storytelling and professional content.'
+    }
+  ],
+  approach: [
+    {
+      id: 1,
+      title: 'Major Professional Photoshoot',
+      description: 'We conducted an extensive professional photoshoot to capture Scholz\'s brand essence and create a comprehensive visual library.',
+      bullets: [
+        'On-location photography showcasing their facilities and operations',
+        'Professional headshots and team photography for brand consistency',
+        'Product and service photography highlighting key offerings',
+        'Lifestyle imagery that connects with their target audience'
+      ]
+    },
+    {
+      id: 2,
+      title: 'Website Design and Development',
+      description: 'We designed and developed a cutting-edge website that showcases Scholz\'s expertise and incorporates our professional photography.',
+      bullets: [
+        'Modern, responsive design optimised for all devices',
+        'Integration of custom photography throughout the site',
+        'Enhanced user experience with intuitive navigation',
+        'SEO optimisation to improve search visibility and traffic'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Video Production',
+      description: 'Our team produced high-quality video content to bring Scholz\'s story to life and engage audiences across digital platforms.',
+      bullets: [
+        'Brand story video showcasing company values and mission',
+        'Service demonstration videos highlighting key capabilities',
+        'Behind-the-scenes content for authentic brand connection',
+        'Social media video content optimised for different platforms'
+      ]
+    },
+    {
+      id: 4,
+      title: 'Integrated Digital Strategy',
+      description: 'We implemented a cohesive digital strategy that unified all visual and content elements across platforms.',
+      bullets: [
+        'Consistent brand messaging across all digital touchpoints',
+        'Strategic content distribution across social media platforms',
+        'Performance tracking and analytics implementation',
+        'Ongoing optimisation based on audience engagement data'
+      ]
+    }
+  ],
+  results: [
+    {
+      id: 1,
+      title: 'Stunning Visual Brand Identity',
+      description: 'A complete visual transformation through professional photography that authentically represents Scholz\'s brand and values.'
+    },
+    {
+      id: 2,
+      title: 'Modern, High-Performance Website',
+      description: 'A cutting-edge website that effectively showcases their services and engages visitors with compelling visual content and seamless user experience.'
+    },
+    {
+      id: 3,
+      title: 'Engaging Video Content Library',
+      description: 'Professional video content that tells Scholz\'s story and demonstrates their expertise, driving higher engagement across digital platforms.'
+    }
+  ],
+  callToAction: {
+    title: 'Ready to Transform Your Brand?',
+    description: 'Let us help you create a powerful visual identity through professional photography, web development, and video production.',
+    primaryButton: {
+      text: 'Start Your Transformation',
+      link: '/contact'
+    },
+    secondaryButton: {
+      text: 'View Our Work',
+      link: '/portfolio'
+    }
+  },
+  createdAt: '2024-03-10',
+  updatedAt: '2024-12-15',
+  featured: true
+},
+{
+  "id": "cs-005",
+  "slug": "kearneys-transport",
+  "title": "Kearneys Transport",
+  "subtitle": "Driving Brand Excellence with Statewide Photography and a Cohesive Digital & Print Presence",
+  "company": "Kearneys Transport",
+  "industry": "Transport & Logistics",
+  "turnover": "Ongoing",
+  "status": "Completed",
+  "heroImage": "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166275/DJI_0079_gt5epb.jpg",
+  "imageCarousel": [
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166291/DSC_6520_twv3qj.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166292/DSC_6258_pgtj4g.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166273/DSC_6599_y0rmx8.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166266/DJI_0092_ws1fdp.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166264/DSC_6037_lddyge.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166237/DSC_6610_hrso1c.jpg"
+  ],
+  "masonryGallery": [
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166282/DSC_6538_qhs7vw.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166271/DSC_6130_jh3ku7.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166259/DSC_6126_msl9g3.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166252/DJI_20250201102448_0023_D_ojmeqw.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166238/DJI_0005_wemci8.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166236/DSC_6733_dqnsye.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166231/DSC_6586_nvdqex.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166223/DSC_6475_izqp1i.jpg",
+    "https://res.cloudinary.com/dvwug91mb/image/upload/v1749166210/DJI_20250201104835_0072_D_znclp5.jpg"
+  ],
+  "services": [
+    "Statewide Photography",
+    "Web Design & Development",
+    "Print Material Design"
+  ],
+  "overview": "Kearneys Transport, a respected name in Victorian logistics, partnered with us to execute a comprehensive brand uplift. The project involved an extensive photoshoot across various locations in Victoria, the development of a modern and robust website, and the creation of professional print materials to ensure brand consistency across all touchpoints.",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Lacked High-Quality Visuals",
+      "description": "The existing visual assets did not reflect the scale and professionalism of Kearneys' operations across Victoria, failing to capture their impressive fleet and dedicated team."
+    },
+    {
+      "id": 2,
+      "title": "Outdated Digital Platform",
+      "description": "Their website was not effectively showcasing their capabilities or providing a user-friendly experience, creating a disconnect with their modern operational standards."
+    },
+    {
+      "id": 3,
+      "title": "Inconsistent Print Materials",
+      "description": "There was a need for professionally designed, tangible marketing materials that aligned with a new, modern brand identity for use in sales and client meetings."
+    }
+  ],
+  "approach": [
+    {
+      "id": 1,
+      "title": "Victorian-Wide Photoshoot",
+      "description": "We embarked on a comprehensive photoshoot across Victoria to capture the essence of Kearneys Transport in action, creating a powerful library of custom imagery.",
+      "bullets": [
+        "On-location shoots at key operational hubs and scenic routes",
+        "Dynamic aerial drone photography of their fleet in motion",
+        "Capturing their trucks against iconic Victorian landscapes",
+        "Professional imagery of their team and equipment"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Website Design and Development",
+      "description": "A new website was built from the ground up to serve as a powerful digital storefront, leveraging the stunning new photography to create an immersive experience.",
+      "bullets": [
+        "A visually-driven design focused on large-format imagery",
+        "Clear articulation of services and company values",
+        "Mobile-first, responsive design for accessibility on any device",
+        "Implementation of an easy-to-use content management system (CMS)"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Professional Print Design",
+      "description": "To ensure brand cohesion, we designed a suite of print materials that mirrored the new website's aesthetic, providing a professional and consistent brand image.",
+      "bullets": [
+        "Design of company brochures and capability statements",
+        "Creation of branded stationery and business cards",
+        "Ensuring all print collateral was visually aligned with the digital brand",
+        "High-quality material and finish recommendations"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": 1,
+      "title": "A Stunning & Authentic Visual Library",
+      "description": "An extensive collection of high-impact photographs that showcase the breadth of their operations and the quality of their fleet across Victoria.",
+
+    },
+    {
+      "id": 2,
+      "title": "Elevated Digital & Print Presence",
+      "description": "A seamless and professional brand identity across their new website and print materials, significantly enhancing their market position and client perception."
+    },
+    {
+      "id": 3,
+      "title": "Empowered Sales & Marketing",
+      "description": "The new website and print collateral serve as powerful tools for the sales team, effectively communicating the company's story and capabilities."
+    }
+  ],
+  "callToAction": {
+    "title": "Ready to Unify Your Brand?",
+    "description": "From state-wide photoshoots to cohesive web and print design, let's build a powerful and consistent brand identity for your business.",
+    "primaryButton": {
+      "text": "Get in Touch",
+      "link": "/contact"
+    },
+    "secondaryButton": {
+      "text": "See More Projects",
+      "link": "/case-studies"
+    }
+  },
+  "createdAt": "2024-05-20",
+  "updatedAt": "2025-01-10",
+  "featured": true
+}
 ];
 
 // Helper functions for working with case studies
