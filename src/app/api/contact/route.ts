@@ -79,8 +79,8 @@ export async function POST(request: NextRequest) {
     
     // Send email using Resend
     const { data: emailData, error } = await resend.emails.send({
-      from: 'Truck Marketing <noreply@brandjam.com.au>', // Replace with your verified domain
-      to: ['nicolas@brandjam.com.au'], // Your receiving email
+      from: 'Truck Marketing <hello@truckmarketing.com.au>', // Replace with your verified domain
+      to: ['hello@truckmarketing.com.au', 'nicolas@brandjam.com.au', 'katie@brandjam.com.au'], // Your receiving emails
       replyTo: data.email,
       subject: `New Contact Form Submission from ${escapeHtml(data.name)}`,
       html: createEmailTemplate(data),
@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
     
     // Optionally, send a confirmation email to the user
     await resend.emails.send({
-      from: 'Truck Marketing <noreply@brandjam.com.au>',
+      from: 'Truck Marketing <hello@truckmarketing.com.au>',
       to: data.email,
       subject: 'Thank you for contacting Truck Marketing',
       html: `
