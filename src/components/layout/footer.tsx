@@ -71,8 +71,7 @@ const quickLinks = [
   { title: "About Us", href: "/about" },
   { title: "Case Studies", href: "/case-studies" },
   { title: "Blog", href: "/blog" },
-  { title: "Gallery", href: "/gallery" },
-  { title: "Free Strategy Session", href: "/contact" }
+  { title: "Gallery", href: "/gallery" }
 ]
 
 const legalLinks = [

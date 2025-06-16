@@ -244,103 +244,79 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
 
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 z-0"></div> {/* Dark overlay */}
-          <div className="container mx-auto px-6 pt-40 pb-24 relative z-10"> {/* Content container */}
-            <div className="max-w-4xl">
-              {/* Visual Breadcrumb (Consider adding JSON-LD BreadcrumbList schema if needed) */}
-              <nav aria-label="Breadcrumb" className="mb-6">
-                <ol className="flex items-center space-x-2 text-sm text-gray-300">
-                  <li>
-                    <Link href="/" className="hover:text-white transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <span className="mx-2">/</span>
-                  </li>
-                  <li>
-                    <Link href="/services" className="hover:text-white transition-colors">
-                      Services
-                    </Link>
-                  </li>
-                  <li>
-                    <span className="mx-2">/</span>
-                  </li>
-                  <li>
-                    {/* Current page in breadcrumb - use span, not link */}
-                    <span className="text-white font-semibold" aria-current="page">
-                      {service.title}
-                    </span>
-                  </li>
-                </ol>
-              </nav>
+    {/* HERO SECTION - OPTION 2: MODERN SPLIT-SCREEN */}
+<section className="bg-white text-slate-900">
+  <div className="container mx-auto px-6 py-24 lg:py-32">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* Column 1: Text Content */}
+      <div className="flex flex-col justify-center">
+        {/* Visual Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="mb-5">
+          <ol className="flex items-center space-x-2 text-sm text-gray-500">
+            <li><Link href="/" className="hover:text-slate-800 transition-colors">Home</Link></li>
+            <li><span className="mx-2">/</span></li>
+            <li><Link href="/services" className="hover:text-slate-800 transition-colors">Services</Link></li>
+            <li><span className="mx-2">/</span></li>
+            <li><span className="text-slate-700 font-medium" aria-current="page">{service.title}</span></li>
+          </ol>
+        </nav>
 
-              {/* Badge */}
-              <div className="flex items-center gap-3 mb-6">
-                <Badge className="bg-orange-500 text-white border-0 px-4 py-1 text-base font-medium"> {/* Adjusted size/font for better look */}
-                  Industry Specialised
-                </Badge>
-              </div>
+        {/* Badge */}
+        <div className="flex items-center gap-3 mb-4">
+          <Badge className="bg-orange-100 text-orange-700 border-orange-200 px-3 py-1 text-sm font-medium">
+            Industry Specialised
+          </Badge>
+        </div>
 
-              {/* Title */}
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight"> {/* Added leading-tight */}
-                {service.title}
-              </h1>
+        {/* Title */}
+        <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 mb-5 leading-tight">
+          {service.title}
+        </h1>
 
-              {/* Subtitle */}
-              <p className="text-2xl mb-8 text-gray-200 max-w-2xl">
-                {service.subtitle}
-              </p>
+        {/* Subtitle */}
+        <p className="text-xl lg:text-2xl mb-8 text-slate-600 max-w-xl">
+          {service.subtitle}
+        </p>
 
-              {/* Description */}
-              <p className="text-lg mb-10 text-gray-300 max-w-2xl">
-                {service.description}
-              </p>
+        {/* Call to Action Button */}
+        <div className="flex flex-wrap gap-4">
+          <Button
+            size="lg"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg transition-colors"
+            asChild
+          >
+            <Link href={`/contact?service=${slug}`} aria-label={`Get a free strategy session for ${service.title}`}>
+              Get Your Free Strategy Session
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </div>
 
-              {/* Call to Action Button */}
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  size="lg"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg transition-colors duration-200" // Added transition
-                  asChild // Render Button as its child (Link)
-                >
-                  {/* Link to contact page with service slug as query param */}
-                  <Link
-                    href={`/contact?service=${slug}`}
-                    aria-label={`Get a free strategy session for ${service.title}`}
-                  >
-                    Get Your Free Strategy Session
-                    <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-                  </Link>
-                </Button>
-                {/* Optional: Add a secondary CTA button */}
-                {/* <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-slate-800 px-8 py-6 text-lg">
-                  Learn More
-                </Button> */}
-              </div>
-            </div>
-          </div>
+      {/* Column 2: Image Content */}
+      <div className="relative h-80 lg:h-full min-h-[400px] order-first lg:order-last">
+        {service.heroImageUrl && (
+          <Image
+            src={service.heroImageUrl}
+            alt={`${service.title} - modern marketing approach`}
+            fill
+            className="object-cover rounded-xl shadow-2xl" // Added rounded corners and a strong shadow
+            priority
+            quality={80}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        )}
+      </div>
+    </div>
+  </div>
+</section>
 
-          {/* Hero Background Image */}
-          {service.heroImageUrl && (
-            <div className="absolute inset-y-0 right-0 w-full md:w-1/2 z-0"> {/* Use inset-y-0 for full height */}
-               {/* Adjusted positioning and width for better responsiveness */}
-              <Image
-                src={service.heroImageUrl}
-                alt={`${service.title} - Professional marketing services for trucking companies`}
-                fill // Fill the parent container
-                className="object-cover object-right opacity-40 md:opacity-50" // Control image fit, position, opacity
-                priority // Load this image with high priority as it's above the fold
-                quality={75} // Image quality
-                sizes="(max-width: 768px) 100vw, 50vw" // Define image sizes for responsive loading
-              />
-               {/* Add a subtle gradient overlay on top of the image to ensure text readability */}
-               <div className="absolute inset-0 bg-gradient-to-l from-slate-900/60 to-transparent"></div>
-            </div>
-          )}
-        </section>
+
+        {/* Process Section - Using a component (likely Client or Server) */}
+        <ProcessSectionComponent
+          serviceTitle={service.title}
+          process={service.process} // Pass array of objects { title: string, desc: string }
+        />
 
         {/* Key Benefits Section - Using a component (likely Client or Server) */}
         <KeyBenefits
@@ -352,12 +328,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
           imageUrl={service.featureImageUrl || '/images/trucking-benefits.jpg'} // Pass URL string
           imageAlt={`${service.title} benefits for trucking companies`}
           reverse={false} // Control layout direction
-        />
-
-        {/* Process Section - Using a component (likely Client or Server) */}
-        <ProcessSectionComponent
-          serviceTitle={service.title}
-          process={service.process} // Pass array of objects { title: string, desc: string }
         />
 
         {/* Features Grid Section - Using a component (MUST BE CLIENT COMPONENT for icons) */}

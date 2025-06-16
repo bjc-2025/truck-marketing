@@ -146,7 +146,7 @@ export function TruckingHero() {
       subtitle="Further, Faster"
       description="Proven marketing strategies designed specifically for trucking and logistics companies. Get more qualified leads, boost your visibility, and accelerate your growth."
       primaryCta={{
-        text: "Get Free Strategy Session",
+        text: "Grow Your Business Today",
         href: "/contact"
       }}
       secondaryCta={{
