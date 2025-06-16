@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 import { getBlogSitemapEntries } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const URL = "https://truckmarketing.com.au";
+  const URL = "https://www.truckmarketing.com.au";
 
   // These are your static pages that rarely change.
   // Using new Date() is acceptable, but a fixed date can also be used.
