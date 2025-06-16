@@ -5,10 +5,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
   ArrowRight,
   Search,
   Users,
@@ -80,12 +76,6 @@ const legalLinks = [
   { title: "Cookie Policy", href: "/cookies" }
 ]
 
-const socialLinks = [
-  { title: "Facebook", href: "#", icon: Facebook },
-  { title: "Twitter", href: "#", icon: Twitter },
-  { title: "LinkedIn", href: "#", icon: Linkedin },
-  { title: "Instagram", href: "#", icon: Instagram }
-]
 
 export default function Footer() {
   return (
@@ -188,23 +178,6 @@ export default function Footer() {
                 >
                   Subscribe
                 </Button>
-              </div>
-            </div>
-            
-            {/* Social Links */}
-            <div>
-              <p className="text-gray-300 text-sm mb-4">Follow us on social media</p>
-              <div className="flex gap-3">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={`footer-social-${index}`}
-                    href={social.href}
-                    className="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-truck-orange-500 rounded-lg transition-colors group"
-                    aria-label={social.title}
-                  >
-                    <social.icon className="h-4 w-4 text-gray-400 group-hover:text-white transition-colors" />
-                  </a>
-                ))}
               </div>
             </div>
           </div>
