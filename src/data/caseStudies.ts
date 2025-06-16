@@ -206,6 +206,16 @@ export const caseStudies: CaseStudy[] = [
         id: 4,
         title: 'Stronger Digital Footprint',
         description: 'Optimised SEO, social media presence, and pay-per-click advertising not only broadened the reach but also established TwinCity Truck Centre as an authority in the trucking industry.'
+      },
+      {
+        id: 5,
+        title: 'Streamlined User Experience',
+        description: 'Visitors could quickly navigate to services, request quotes, and learn more about TwinCity Truck Centre\'s expertise, supporting higher conversion rates and a smoother customer journey.'
+      },
+      {
+      id: 6,
+      title: 'Professional Visual Content',
+      description: 'High-quality photography and video content enhanced the dealership\'s online presence, making it more engaging and visually appealing to potential customers.'
       }
     ],
     callToAction: {
@@ -272,6 +282,11 @@ export const caseStudies: CaseStudy[] = [
         id: 3,
         title: 'Increasing Competition',
         description: 'The company needed to stand out in a crowded market by highlighting their reliability, fleet capabilities, and customer-centric approach.'
+      },
+      {
+        id: 4,
+        title: 'Need for Engaging Content',
+        description: 'They required high-quality content that could be used across their website, social media, and marketing materials to engage both current and potential clients.'
       }
     ],
     approach: [
@@ -319,11 +334,6 @@ export const caseStudies: CaseStudy[] = [
         id: 3,
         title: 'Improved Customer Engagement',
         description: 'High-quality visual storytelling—both on the website and shared via social media—generated positive feedback from existing customers and reinforced the company\'s industry reputation.'
-      },
-      {
-        id: 4,
-        title: 'Streamlined User Experience',
-        description: 'Visitors could quickly navigate to services, request quotes, and learn more about Killens Trucking Co.\'s expertise, supporting higher conversion rates and a smoother customer journey.'
       }
     ],
     callToAction: {
