@@ -2,9 +2,27 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy - Trucking Marketing Experts',
-  description: 'Learn about how Truck Marketing uses cookies and similar technologies to improve your browsing experience.',
+  description: 'Learn how Truck Marketing uses cookies to enhance your experience, analyze traffic, and provide personalized content. Manage your cookie preferences here.',
+  keywords: 'cookie policy, cookies, website tracking, privacy settings, truck marketing cookies, browser cookies',
   alternates: {
-    canonical: 'https://truckmarketing.com.au/cookie-policy',
+    canonical: 'https://www.truckmarketing.com.au/cookie-policy',
+  },
+  openGraph: {
+    title: 'Cookie Policy - Truck Marketing',
+    description: 'Learn how Truck Marketing uses cookies to enhance your experience, analyze traffic, and provide personalized content.',
+    url: 'https://www.truckmarketing.com.au/cookie-policy',
+    siteName: 'Truck Marketing',
+    locale: 'en_AU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Cookie Policy - Truck Marketing',
+    description: 'Learn how we use cookies to enhance your browsing experience.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -21,7 +39,7 @@ export default function CookiePolicyPage() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-truck-blue-800">1. Introduction</h2>
           <p className="mb-4">
-            Truck Marketing (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) uses cookies and similar tracking technologies on our website (truckmarketing.com.au) to enhance your browsing experience, analyze site traffic, and understand where our visitors are coming from. This Cookie Policy explains what cookies are, how we use them, and your choices regarding cookies.
+            Truck Marketing (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) uses cookies and similar tracking technologies on our website (www.truckmarketing.com.au) to enhance your browsing experience, analyze site traffic, and understand where our visitors are coming from. This Cookie Policy explains what cookies are, how we use them, and your choices regarding cookies.
           </p>
         </section>
 

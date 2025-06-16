@@ -7,9 +7,27 @@ import { ArrowLeft, Shield, Mail, Phone, MapPin, CheckCircle, Users, Lock, Eye, 
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Truck Marketing',
-  description: 'Read our privacy policy to understand how we collect, use, and protect your information at Truck Marketing.',
+  description: 'Our privacy policy explains how Truck Marketing collects, uses and protects your personal information. We are committed to safeguarding your data and privacy.',
+  keywords: 'privacy policy, data protection, truck marketing privacy, personal information, gdpr compliance, australian privacy',
   alternates: {
-    canonical: 'https://truckmarketing.com.au/privacy',
+    canonical: 'https://www.truckmarketing.com.au/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy - Truck Marketing',
+    description: 'Our privacy policy explains how Truck Marketing collects, uses and protects your personal information. We are committed to safeguarding your data and privacy.',
+    url: 'https://www.truckmarketing.com.au/privacy',
+    siteName: 'Truck Marketing',
+    locale: 'en_AU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy - Truck Marketing',
+    description: 'Our privacy policy explains how we collect, use and protect your personal information.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

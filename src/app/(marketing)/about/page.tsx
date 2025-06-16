@@ -12,7 +12,7 @@ import  TeamSection  from "@/components/sections/team-section"; // Assuming you 
 const pageConfig = {
   title: "About Us | Australian Truck & Logistics Marketing Agency",
   description: "Learn how our specialist marketing team in Albury Wodonga drives growth for transport companies across Australia. We offer road-tested strategies with measurable ROI.",
-  url: "https://www.truckmarketing.com/about", // Replace with your production URL
+  url: "https://www.truckmarketing.com.au/about",
   ogImage: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp",
   companyName: "Truck Marketing",
   address: {

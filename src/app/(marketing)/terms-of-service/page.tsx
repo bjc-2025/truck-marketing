@@ -1,10 +1,29 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Terms of Service - Trucking Marketing Experts',
-  description: 'Read our terms of service to understand the conditions for using our website and services.',
+  description: 'Read the Truck Marketing terms of service. Understand the conditions for using our website and digital marketing services for transport companies.',
+  keywords: 'terms of service, terms and conditions, legal terms, truck marketing terms, service agreement, website terms',
   alternates: {
-    canonical: 'https://truckmarketing.com.au/terms-of-service',
+    canonical: 'https://www.truckmarketing.com.au/terms-of-service',
+  },
+  openGraph: {
+    title: 'Terms of Service - Truck Marketing',
+    description: 'Read the Truck Marketing terms of service. Understand the conditions for using our website and digital marketing services.',
+    url: 'https://www.truckmarketing.com.au/terms-of-service',
+    siteName: 'Truck Marketing',
+    locale: 'en_AU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms of Service - Truck Marketing',
+    description: 'Read our terms of service for using our website and marketing services.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -21,7 +40,7 @@ export default function TermsOfServicePage() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-truck-blue-800">1. Acceptance of Terms</h2>
           <p className="mb-4">
-            By accessing and using this website (truckmarketing.com.au) and the services provided by Truck Marketing (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), you accept and agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+            By accessing and using this website (www.truckmarketing.com.au) and the services provided by Truck Marketing (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), you accept and agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
           </p>
         </section>
 
@@ -159,7 +178,7 @@ export default function TermsOfServicePage() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-truck-blue-800">12. Privacy and Data Protection</h2>
           <p className="mb-4">
-            We are committed to protecting your privacy and handling your data in accordance with applicable privacy laws. Please refer to our <a href="/privacy" className="text-truck-blue-600 hover:text-truck-blue-700 underline">Privacy Policy</a> for detailed information on how we collect, use, and protect your information.
+            We are committed to protecting your privacy and handling your data in accordance with applicable privacy laws. Please refer to our <Link href="/privacy" className="text-truck-blue-600 hover:text-truck-blue-700 underline">Privacy Policy</Link> for detailed information on how we collect, use, and protect your information.
           </p>
         </section>
 

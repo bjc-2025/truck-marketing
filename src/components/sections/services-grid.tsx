@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Search, Users, Globe, Target, BarChart3, Camera} from "lucide-react"
+import Link from "next/link"
 
 interface Service {
   
@@ -155,10 +156,10 @@ export function ServicesGrid({
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                   asChild
                 >
-                  <a href={service.href}>
+                  <Link href={service.href}>
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

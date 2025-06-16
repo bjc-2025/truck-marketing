@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Trucking Marketing Blog | Expert Industry Insights',
     description: 'Discover proven marketing strategies, industry insights, and growth tactics specifically for trucking and logistics companies.',
-    url: 'https://truckmarketing.com/blog', // Replace with your actual domain
+    url: 'https://www.truckmarketing.com.au/blog',
     siteName: 'Truck Marketing',
     images: [ // It's good practice to have an OG image for the blog listing page too
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ['https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/Plane-Over-Truck_nju2ie.jpg'],
   },
   alternates: {
-    canonical: 'https://truckmarketing.com/blog',
+    canonical: 'https://www.truckmarketing.com.au/blog',
   },
 }
 

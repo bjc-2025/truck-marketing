@@ -69,7 +69,7 @@ export async function generateMetadata(
     }
   }
 const service = serviceData[slug as ServiceSlug];
-  const canonicalUrl = `https://truckmarketing.com/services/${slug}`; // Construct canonical URL
+  const canonicalUrl = `https://www.truckmarketing.com.au/services/${slug}`; // Construct canonical URL
 
   // Get parent metadata (useful for inheriting default settings like site name, default OG images)
   const previousImages = (await parent).openGraph?.images || [];

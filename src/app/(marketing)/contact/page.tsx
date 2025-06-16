@@ -3,8 +3,8 @@ import { ContactForm } from '@/components/forms'
 
 
 const pageTitle = 'Contact Truck Marketing Experts | Get Your Free Consultation';
-const pageDescription = "Reach out to Truck Marketing for expert advice on growing your transport or logistics business. Request a free consultation today to discuss your needs.";
-const pageUrl = 'https://www.truckmarketing.com/contact';
+const pageDescription = "Get in touch with Truck Marketing for expert trucking & logistics marketing advice. Request your free consultation to discuss how we can grow your transport business.";
+const pageUrl = 'https://www.truckmarketing.com.au/contact';
 
 const ogImageUrl = 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748215193/Brandjam_ciohia.webp';
 
@@ -64,10 +64,10 @@ export default function ContactPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://truckmarketing.com.au/#business',
+    '@id': 'https://www.truckmarketing.com.au/#business',
     name: 'Truck Marketing',
     description: 'Expert marketing agency specializing in digital marketing for trucking and logistics companies across Australia.',
-    url: 'https://truckmarketing.com.au/contact',
+    url: 'https://www.truckmarketing.com.au/contact',
     telephone: '+61491999011',
     email: 'autruckmarketing@gmail.com',
     address: {
@@ -127,7 +127,17 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="container mx-auto px-4 py-8">
-        <ContactForm />
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl sm:text-5xl font-bold text-truck-blue-900 mb-6">
+              Contact Truck Marketing Experts Today
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Ready to grow your trucking business? Contact our experts today for a personalized marketing strategy that delivers results.
+            </p>
+          </div>
+          <ContactForm />
+        </div>
       </div>
     </>
   )

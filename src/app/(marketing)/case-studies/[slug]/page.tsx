@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${study.title} Case Study | Truck Marketing Solutions`,
     description: study.overview,
     alternates: {
-      canonical: `https://truckmarketing.com.au/case-studies/${study.slug}`,
+      canonical: `https://www.truckmarketing.com.au/case-studies/${study.slug}`,
     },
     openGraph: {
       title: `${study.title} Case Study`,

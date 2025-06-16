@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://truckmarketing.com/blog/${post.slug}`,
+      url: `https://www.truckmarketing.com.au/blog/${post.slug}`,
       siteName: 'Truck Marketing',
       images: [
         {
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       follow: true,
     },
     alternates: {
-      canonical: `https://truckmarketing.com/blog/${post.slug}`,
+      canonical: `https://www.truckmarketing.com.au/blog/${post.slug}`,
     }
   }
 }
@@ -135,7 +135,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const shareUrl = `https://truckmarketing.com/blog/${post.slug}`
+  const shareUrl = `https://www.truckmarketing.com.au/blog/${post.slug}`
   const shareTitle = encodeURIComponent(post.title)
 
   return (
@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               name: 'Truck Marketing',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://truckmarketing.com/logo.png',
+                url: 'https://www.truckmarketing.com.au/Truck%20marketing%20logo%20WW-07.svg',
               },
             },
             datePublished: post.publishedAt,

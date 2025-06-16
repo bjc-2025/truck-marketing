@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 interface HeroProps {
   badge?: string
@@ -45,7 +46,7 @@ export function Hero({
             fill
             className="object-cover"
             priority // Since this is above the fold
-            quality={75} // Reduce quality slightly for better performance
+            quality={85} // Balanced quality for hero images
             sizes="100vw" // Since it covers the full viewport
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
@@ -91,10 +92,10 @@ export function Hero({
                 className="text-lg px-8 py-6 h-auto"
                 asChild
               >
-                <a href={primaryCta.href}>
+                <Link href={primaryCta.href}>
                   {primaryCta.text}
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
               
               {secondaryCta && (
@@ -104,9 +105,9 @@ export function Hero({
                   className=" text-lg px-8 py-6 h-auto"
                   asChild
                 >
-                  <a href={secondaryCta.href}>
+                  <Link href={secondaryCta.href}>
                     {secondaryCta.text}
-                  </a>
+                  </Link>
                 </Button>
               )}
             </div>

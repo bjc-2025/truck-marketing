@@ -6,9 +6,36 @@ import { getImagesFromFolder, CloudinaryImage } from '@/lib/cloudinary'; // Adju
 // --- SEO & METADATA ---
 export const metadata: Metadata = {
   title: 'Gallery - Trucking & Logistics Fleet Photos',
-  description: 'Browse our gallery of professional trucking fleet photos, logistics operations, and transport vehicles from our clients across Australia.',
+  description: 'View our gallery of professional trucking fleet photos and logistics operations. Showcasing successful transport companies across Australia.',
+  keywords: 'trucking fleet photos, logistics gallery, transport vehicles, truck photography, fleet showcase, australian trucking photos',
   alternates: {
-    canonical: 'https://truckmarketing.com.au/gallery',
+    canonical: 'https://www.truckmarketing.com.au/gallery',
+  },
+  openGraph: {
+    title: 'Gallery - Trucking & Logistics Fleet Photos',
+    description: 'View our gallery of professional trucking fleet photos and logistics operations. Showcasing successful transport companies across Australia.',
+    url: 'https://www.truckmarketing.com.au/gallery',
+    siteName: 'Truck Marketing',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748387832/NH-Trans-W900SAR-Jan-copy_gzwevi.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Professional trucking fleet gallery',
+      }
+    ],
+    locale: 'en_AU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gallery - Trucking & Logistics Fleet Photos',
+    description: 'View our gallery of professional trucking fleet photos and logistics operations.',
+    images: ['https://res.cloudinary.com/dvwug91mb/image/upload/v1748387832/NH-Trans-W900SAR-Jan-copy_gzwevi.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

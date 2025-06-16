@@ -141,7 +141,7 @@ export async function POST(request: Request) {
                       </table>
                       
                       <div style="text-align: center; margin: 40px 0;">
-                        <a href="https://truckmarketing.com.au/blog" style="display: inline-block; background-color: #f97316; color: white; padding: 16px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px;">Check Out Our Blog</a>
+                        <a href="https://www.truckmarketing.com.au/blog" style="display: inline-block; background-color: #f97316; color: white; padding: 16px 32px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px;">Check Out Our Blog</a>
                       </div>
                       
                       <div style="border-top: 1px solid #e5e7eb; margin: 40px 0 30px 0;"></div>

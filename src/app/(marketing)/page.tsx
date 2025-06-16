@@ -8,12 +8,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Truck Marketing - Expert Marketing for Trucking & Logistics Companies',
-  description: 'Drive more leads and grow your trucking business with specialized digital marketing. SEO, PPC, and lead generation tailored for transport companies across Australia.',
+  description: 'Expert digital marketing for trucking & logistics companies. Get more leads with SEO, PPC & lead generation services tailored for transport.',
   keywords: 'truck marketing, logistics marketing, trucking SEO, transport marketing agency, haulage marketing, freight marketing, trucking PPC, logistics lead generation, trucking digital marketing, transport company marketing',
   openGraph: {
     title: 'Truck Marketing - Expert Marketing for Trucking & Logistics Companies',
-    description: 'Drive more leads and grow your trucking business with specialized digital marketing. SEO, PPC, and lead generation tailored for transport companies across Australia.',
-    url: 'https://truckmarketing.com.au',
+    description: 'Expert digital marketing for trucking & logistics companies. Get more leads with SEO, PPC & lead generation services tailored for transport.',
+    url: 'https://www.truckmarketing.com.au',
     siteName: 'Truck Marketing',
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://truckmarketing.com.au',
+    canonical: 'https://www.truckmarketing.com.au',
   },
   verification: {
     google: 'verification-token', // Add your Google verification token
@@ -55,12 +55,12 @@ export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://truckmarketing.com.au',
+    '@id': 'https://www.truckmarketing.com.au',
     name: 'Truck Marketing',
     description: 'Expert marketing agency specializing in digital marketing for trucking and logistics companies across Australia.',
-    url: 'https://truckmarketing.com.au',
+    url: 'https://www.truckmarketing.com.au',
     telephone: '+61491999011',
-    email: 'autruckmarketing@gmail.com',
+    email: 'hello@truckmarketing.com.au',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '1 Stead Street',
