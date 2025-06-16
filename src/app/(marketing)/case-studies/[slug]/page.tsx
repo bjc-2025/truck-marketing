@@ -215,7 +215,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </div>
           
           <div className="relative max-w-6xl mx-auto">
-            {study.approach.map((section, index) => (
+            {study.approach.map((section) => (
               <div key={section.id} className="relative lg:grid lg:grid-cols-[auto_1fr_1fr] lg:gap-8 items-center mb-16">
                  <div className="flex justify-center lg:justify-start mb-6 lg:mb-0">
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">

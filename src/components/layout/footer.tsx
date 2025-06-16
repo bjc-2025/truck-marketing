@@ -110,7 +110,7 @@ export default function Footer() {
         setIsSuccess(false)
         setMessage(data.error || 'Something went wrong')
       }
-    } catch (error) {
+    } catch {
       setIsSuccess(false)
       setMessage('Network error. Please try again.')
     } finally {
