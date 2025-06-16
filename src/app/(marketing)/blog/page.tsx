@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { ArrowRight, Clock, Calendar } from "lucide-react"
+import { ArrowRight, Clock } from "lucide-react"
 import { ContactCTA } from "@/components/sections/cta-section"
 
 // Import blog utilities with error handling
