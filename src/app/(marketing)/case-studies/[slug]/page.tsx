@@ -216,12 +216,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
           
           <div className="relative max-w-5xl mx-auto">
              <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-slate-700 hidden lg:block" aria-hidden="true"></div>
-            {study.approach.map((section, _index) => (
-              <div key={section.id} className="relative lg:grid lg:grid-cols-2 lg:gap-16 items-center mb-16">
+
+            {study.approach.map((section, index) => (
+              <div key={section.id} className="relative lg:grid lg:grid-cols-2 lg:gap-16 items-start mb-16">
                  <div className="lg:col-start-1">
-                    <div className="lg:sticky top-24 lg:text-left lg:pl-16">
-                        <div className="flex items-center gap-4">
-                             <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    <div className={`lg:sticky top-24 ${index % 2 === 0 ? 'lg:text-right lg:pr-16' : 'lg:text-left lg:pl-16'}`}>
+                        <div className="flex items-center gap-4 lg:justify-normal">
+                             <div className="order-1 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
                                 {section.id}
                             </div>
                             <h3 className="text-2xl font-bold text-white">{section.title}</h3>
