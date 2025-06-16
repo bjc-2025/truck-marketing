@@ -191,7 +191,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Hero Section */}
         <section className="relative">
-          <div className="relative h-96 overflow-hidden">
+          <div className="relative h-[32rem] overflow-hidden">
             <Image
               src={post.image}
               alt={post.imageAlt}

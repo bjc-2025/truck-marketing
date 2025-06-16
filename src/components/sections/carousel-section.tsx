@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react"
+import Link from "next/link"
+import { ChevronLeft, ChevronRight, Pause, Play, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface CarouselImage {
@@ -20,7 +21,6 @@ interface CarouselSectionProps {
   autoRotate?: boolean
   rotationSpeed?: number // in milliseconds
   showControls?: boolean
-  showDots?: boolean
   cloudName?: string // Your Cloudinary cloud name (optional)
   aspectRatio?: "video" | "square" | "wide" // 16:9, 1:1, or 2:1
 }
@@ -78,7 +78,6 @@ export function CarouselSection({
   autoRotate = true,
   rotationSpeed = 4000,
   showControls = true,
-  showDots = true,
   cloudName,
   aspectRatio = "video"
 }: CarouselSectionProps) {
@@ -106,9 +105,6 @@ export function CarouselSection({
     setCurrentIndex((prev) => (prev + 1) % images.length)
   }
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying)
@@ -138,7 +134,7 @@ export function CarouselSection({
       case "wide":
         return "aspect-[2/1]"
       default:
-        return "aspect-video" // 16:9
+        return "aspect-[21/9]" // 21:9 (narrower than 16:9)
     }
   }
 
@@ -258,43 +254,18 @@ export function CarouselSection({
             )}
           </div>
 
-          {/* Dots Navigation */}
-          {showDots && images.length > 1 && (
-            <div className="flex justify-center gap-2 mt-8">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? "bg-truck-orange-600 scale-125"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          )}
 
-          {/* Progress Bar */}
-          {images.length > 1 && (
-            <div className="mt-6 w-full bg-gray-200 rounded-full h-1 overflow-hidden">
-              <div 
-                className="h-full bg-truck-orange-500 transition-all duration-300 ease-out"
-                style={{ width: `${((currentIndex + 1) / images.length) * 100}%` }}
-              />
-            </div>
-          )}
+          {/* View Case Studies Button */}
+          <div className="flex justify-center mt-8">
+            <Button asChild className="bg-truck-orange-500 hover:bg-truck-orange-600 text-white">
+              <Link href="/case-studies" className="flex items-center gap-2">
+                View All Case Studies
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
 
-        {/* Optional Caption */}
-        {images.length > 1 && (
-          <div className="text-center mt-8">
-            <p className="text-sm text-muted-foreground">
-              {currentIndex + 1} of {images.length}
-            </p>
-          </div>
-        )}
       </div>
     </section>
   )

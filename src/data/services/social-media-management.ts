@@ -4,9 +4,9 @@ export const socialMediaManagementService: ServiceInfo = {
   title: 'Social Media Management',
   subtitle: 'Build Your Brand and Engage Your Audience Across Social Platforms',
   description: 'Engage your audience and build brand loyalty through targeted social media strategies designed for the trucking industry.',
-  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389402/Willets4_a28ia0.jpg',
+  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1750035682/TCTC-Web-Phone-Mockup-copy-scaled_dogmda.jpg',
   featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389401/Willets1_ijbx19.jpg',
-  secondaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389401/Willets1_ijbx19.jpg',
+  secondaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1750035679/Killens-Mockup-copy-scaled_u0bend.jpg',
   benefits: [
     'Build brand awareness in your target markets',
     'Engage with drivers and potential customers',

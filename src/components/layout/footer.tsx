@@ -1,7 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { 
-  Truck,
   Phone,
   Mail,
   MapPin,
@@ -97,10 +97,13 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="flex items-center justify-center w-10 h-10 bg-truck-orange-500 rounded-lg">
-                <Truck className="h-6 w-6 text-white" />
-              </div>
-              <span className="font-bold text-xl">TruckMarketing</span>
+              <Image
+                src="/Truck marketing logo WW-07.svg"
+                alt="Truck Marketing Logo"
+                width={200}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed">

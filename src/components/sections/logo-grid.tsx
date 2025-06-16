@@ -3,17 +3,17 @@ import Image from 'next/image';
 export default function LogoCloud() {
     // Define the logos as an array of objects for easier management
  const logos = [
-        { src: '/logos/Bondwoods.svg', alt: 'Bondwoods Transport logo Australian freight and logistics company', heightPx: 24 },
-        { src: '/logos/Churchhill.svg', alt: 'Churchill logo', heightPx: 24 },
-        { src: '/logos/dawsons.svg', alt: 'Dawsons Haulage Logo', heightPx: 24 },
-        { src: '/logos/Kearney.svg', alt: 'Kearney Transport logo', heightPx: 24 },
-        { src: '/logos/Paclease.svg', alt: 'PacLease logo Commercial truck leasing and rental provider', heightPx: 24 },
-        { src: '/logos/RTorange.svg', alt: 'RT Orange logo', heightPx: 24 },
-        { src: '/logos/Scholz.svg', alt: 'Scholz Baulk Haulage', heightPx: 24 },
-        { src: '/logos/Truckparts.svg', alt: 'Truck Parts Company logo Supplier of truck components and accessories', heightPx: 24 },
-        { src: '/logos/twincity.svg', alt: 'Twin City Truck Centre Logo', heightPx: 24 },
-        { src: '/logos/Killen.svg', alt: 'Killen Trucking logo Freight transport services company', heightPx: 24 },
-        { src: '/logos/centurion.svg', alt: 'Centurion logo Australian logistics and transport provider', heightPx: 20 },
+        { src: '/logos/Bondwoods.svg', alt: 'Bondwoods Transport logo Australian freight and logistics company', heightPx: 32 },
+        { src: '/logos/Churchhill.svg', alt: 'Churchill logo', heightPx: 32 },
+        { src: '/logos/dawsons.svg', alt: 'Dawsons Haulage Logo', heightPx: 32 },
+        { src: '/logos/Kearney.svg', alt: 'Kearney Transport logo', heightPx: 32 },
+        { src: '/logos/Paclease.svg', alt: 'PacLease logo Commercial truck leasing and rental provider', heightPx: 32 },
+        { src: '/logos/RTorange.svg', alt: 'RT Orange logo', heightPx: 32 },
+        { src: '/logos/Scholz.svg', alt: 'Scholz Baulk Haulage', heightPx: 32 },
+        { src: '/logos/Truckparts.svg', alt: 'Truck Parts Company logo Supplier of truck components and accessories', heightPx: 32 },
+        { src: '/logos/twincity.svg', alt: 'Twin City Truck Centre Logo', heightPx: 32 },
+        { src: '/logos/Killen.svg', alt: 'Killen Trucking logo Freight transport services company', heightPx: 32 },
+        { src: '/logos/centurion.svg', alt: 'Centurion logo Australian logistics and transport provider', heightPx: 28 },
     ];
 
     return (

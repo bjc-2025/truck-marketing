@@ -4,8 +4,8 @@ export const websiteDevelopmentService: ServiceInfo = {
   title: 'Website Development',
   subtitle: 'Professional Websites That Convert Visitors into Long-Term Contracts',
   description: 'Your website is your digital storefront. We build fast, professional sites that establish credibility and generate leads 24/7.',
-  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992877/DJI_20250531100604_0114_D-Edit-2_obwr0g.jpg',
-  featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389440/JSC3_a4p3mw.jpg',
+  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1750035676/TCTC-Web-Mockup-scaled_wiwqdb.jpg',
+  featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1750035677/Dawsons_Haulage_Website_ig0gsf.jpg',
   secondaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389438/JSC4_mrwabi.jpg',
   benefits: [
     'Convert 3x more visitors into qualified leads',

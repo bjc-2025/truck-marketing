@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { 
   NavigationMenu,
@@ -14,7 +15,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { 
   Menu, 
   Phone, 
-  Truck,
   Search,
   Users,
   Globe,
@@ -139,10 +139,13 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo with prefetch */}
           <Link href="/" prefetch={true} className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-10 h-10 bg-truck-orange-500 rounded-lg">
-              <Truck className="h-6 w-6 text-white" />
-            </div>
-            <span className="font-bold text-xl text-gray-900">TruckMarketing</span>
+            <Image
+              src="/Truck marketing logo-02-02.svg"
+              alt="Truck Marketing Logo"
+              width={200}
+              height={40}
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -154,7 +157,7 @@ export function Navbar() {
                   <Link
                     href="/"
                     prefetch={true}
-                    className="text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
+                    className="text-sm font-bold px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
                   >
                     Home
                   </Link>
@@ -162,7 +165,7 @@ export function Navbar() {
 
                 {/* Services Dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium px-4 py-2 text-gray-700 hover:text-gray-900">
+                  <NavigationMenuTrigger className="text-sm font-bold px-4 py-2 text-gray-700 hover:text-gray-900">
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="z-[60]">
@@ -201,7 +204,7 @@ export function Navbar() {
                     <Link 
                       href={item.href}
                       prefetch={shouldPrefetch(item.priority)}
-                      className="text-sm font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
+                      className="text-sm font-bold px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-gray-700 hover:text-gray-900"
                     >
                       {item.title}
                     </Link>
@@ -238,10 +241,13 @@ export function Navbar() {
                 <div className="flex flex-col gap-6 mt-8">
                   {/* Mobile Logo */}
                   <div className="flex items-center gap-2 pb-4 border-b">
-                    <div className="flex items-center justify-center w-8 h-8 bg-truck-orange-500 rounded-lg">
-                      <Truck className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="font-bold text-lg text-gray-900">TruckMarketing</span>
+                    <Image
+                      src="/Truck marketing logo-02 1.svg"
+                      alt="Truck Marketing Logo"
+                      width={160}
+                      height={32}
+                      className="h-8 w-auto"
+                    />
                   </div>
 
                   {/* Mobile Navigation */}
@@ -288,7 +294,7 @@ export function Navbar() {
                             </div>
                           )}
                           <div>
-                            <div className="font-medium text-sm text-gray-900">{service.title}</div>
+                            <div className="font-blod text-sm text-gray-900">{service.title}</div>
                             <div className="text-xs text-gray-600">{service.description}</div>
                           </div>
                         </Link>
