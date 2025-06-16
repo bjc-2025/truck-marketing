@@ -76,9 +76,13 @@ export function Hero({
               </span>
             </h1>
             
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto lg:mx-0">
-              {description}
-            </p>
+            <div className="mb-8 max-w-2xl mx-auto lg:mx-0">
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                <p className="text-xl text-white">
+                  {description}
+                </p>
+              </div>
+            </div>
             
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

@@ -4,9 +4,9 @@ export const analyticsReportingService: ServiceInfo = {
   title: 'Performance Analytics',
   subtitle: 'Data-Driven Insights to Optimise Your Marketing Investment',
   description: 'Make informed decisions with comprehensive analytics that show exactly what\'s working and where to invest for maximum growth.',
-  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389429/JSC2_r38zet.jpg',
-  featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389426/JSC1_cv6yii.jpg',
-  secondaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389426/JSC1_cv6yii.jpg',
+  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1749166276/DJI_0072_avtrmw.jpg',
+  featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1749015638/Hero4_myavow.jpg',
+  secondaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748992897/DSC_0934_lumf8q.jpg',
   benefits: [
     'Track ROI on every marketing dollar spent',
     'Identify your most profitable lead sources',
@@ -24,7 +24,7 @@ export const analyticsReportingService: ServiceInfo = {
     {
       icon: 'BarChart',
       title: 'Google Analytics Setup',
-      description: 'Complete Google Analytics 4 implementation with custom event tracking, conversion goals, and ecommerce tracking specifically configured for trucking lead generation.'
+      description: 'Complete Google Analytics implementation with custom event tracking, conversion goals, and ecommerce tracking specifically configured for trucking lead generation.'
     },
     {
       icon: 'Phone',

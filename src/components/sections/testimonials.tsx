@@ -153,19 +153,19 @@ export function Testimonials({
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-white mb-2">25+</div>
-              <div className="text-blue-200 text-sm">Happy Clients</div>
+              <div className="text-white text-sm">Happy Clients</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-white mb-2">2+ Years</div>
-              <div className="text-blue-200 text-sm">Industry Experience</div>
+              <div className="text-3xl font-bold text-white mb-2">26+ Years</div>
+              <div className="text-white text-sm">Combined Industry Experience</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-white mb-2">Top-Tier</div>
-              <div className="text-blue-200 text-sm">Creative Solutions</div>
+              <div className="text-white text-sm">Creative Solutions</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-white mb-2">98%</div>
-              <div className="text-blue-200 text-sm">Client Satisfaction</div>
+              <div className="text-white text-sm">Client Satisfaction</div>
             </div>
           </div>
         </div>

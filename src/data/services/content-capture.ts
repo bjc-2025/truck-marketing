@@ -4,7 +4,7 @@ export const contentCaptureService: ServiceInfo = {
   title: 'Content Capture',
   subtitle: 'High-Quality Content That Drives Engagement and Converts Leads',
   description: 'Capture your audience\'s attention and convert leads with professionally crafted content tailored specifically for the trucking industry.',
-  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389419/Rogerias1_t0bjxf.jpg',
+  heroImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748069855/dawsons-scaled_yx9ewf.jpg',
   featureImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389403/Willets5_v5htnv.jpg',
   secondaryImageUrl: 'https://res.cloudinary.com/dvwug91mb/image/upload/v1748389402/Willets3_zmgzsf.jpg',
   benefits: [
