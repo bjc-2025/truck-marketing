@@ -26,7 +26,7 @@ try {
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: 'Trucking Marketing Blog | Industry Insights & Growth Strategies',
+  title: 'Truck Marketing Blog | Industry Insights & Growth Strategies',
   description: 'Get expert insights on trucking industry marketing, lead generation, SEO strategies, and digital growth tactics. Free resources for transport companies.',
   openGraph: {
     title: 'Trucking Marketing Blog | Expert Industry Insights',
@@ -93,7 +93,7 @@ export default function BlogPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Trucking Marketing
+              Truck Marketing
               <span className="block text-accent mt-2">Insights & Strategies</span>
             </h1>
             

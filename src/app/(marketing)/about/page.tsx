@@ -128,7 +128,7 @@ export default function AboutPage() {
               Trucking & Logistics Marketing Specialists
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-              Small Team, <span className="text-truck-orange-400">Big Results.</span>
+              Small Team, <span className="text-truck-orange-600">Big Results.</span>
             </h1>
             <p className="mt-6 text-xl text-slate-200 max-w-3xl mx-auto">
               We&apos;re the dedicated marketing partner for Australia&apos;s transport industry, delivering road-tested strategies that move your business forward.
