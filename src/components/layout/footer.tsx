@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
@@ -14,6 +16,7 @@ import {
   Camera,
   Shield
 } from "lucide-react"
+import { useState } from 'react'
 
 const services = [
   {
@@ -78,6 +81,43 @@ const legalLinks = [
 
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState('')
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setMessage('')
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setIsSuccess(true)
+        setMessage(data.message)
+        setEmail('')
+      } else {
+        setIsSuccess(false)
+        setMessage(data.error || 'Something went wrong')
+      }
+    } catch (error) {
+      setIsSuccess(false)
+      setMessage('Network error. Please try again.')
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
@@ -114,7 +154,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail className="h-4 w-4 text-truck-orange-500 flex-shrink-0" />
-                <a href="mailto:hello@truckmarketing.com" className="text-sm hover:text-truck-orange-500 transition-colors">
+                <a href="mailto:hello@truckmarketing.com.au" className="text-sm hover:text-truck-orange-500 transition-colors">
                   hello@truckmarketing.com
                 </a>
               </div>
@@ -166,19 +206,32 @@ export default function Footer() {
               <p className="text-gray-300 text-sm mb-4">
                 Get trucking marketing tips and industry insights delivered to your inbox.
               </p>
-              <div className="flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-truck-orange-500 focus:border-transparent"
-                />
-                <Button 
-                  size="sm" 
-                  className="bg-truck-orange-500 hover:bg-truck-orange-600 text-white px-4"
-                >
-                  Subscribe
-                </Button>
-              </div>
+              <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your email address"
+                    required
+                    disabled={isLoading}
+                    className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-truck-orange-500 focus:border-transparent disabled:opacity-50"
+                  />
+                  <Button 
+                    type="submit"
+                    size="sm" 
+                    disabled={isLoading}
+                    className="bg-truck-orange-500 hover:bg-truck-orange-600 text-white px-4 disabled:opacity-50"
+                  >
+                    {isLoading ? 'Subscribing...' : 'Subscribe'}
+                  </Button>
+                </div>
+                {message && (
+                  <p className={`text-xs ${isSuccess ? 'text-green-400' : 'text-red-400'}`}>
+                    {message}
+                  </p>
+                )}
+              </form>
             </div>
           </div>
         </div>
