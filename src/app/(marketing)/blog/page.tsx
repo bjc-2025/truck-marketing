@@ -10,20 +10,17 @@ import { ContactCTA } from "@/components/sections/cta-section"
 
 // Import blog utilities with error handling
 let getAllBlogPosts: any
-let getFeaturedBlogPosts: any
 let formatDate: any
 
 try {
   // Use dynamic import instead of require
   const blogUtils = await import('@/lib/blog')
   getAllBlogPosts = blogUtils.getAllBlogPosts
-  getFeaturedBlogPosts = blogUtils.getFeaturedBlogPosts
   formatDate = blogUtils.formatDate
 } catch (error) {
   console.error('Blog utilities not found:', error)
   // Fallback functions
   getAllBlogPosts = () => []
-  getFeaturedBlogPosts = () => []
   formatDate = (date: string) => new Date(date).toLocaleDateString()
 }
 
@@ -64,11 +61,9 @@ const blogHeroBackgroundImageUrl = 'https://res.cloudinary.com/dvwug91mb/image/u
 export default function BlogPage() {
   // Get blog data with fallbacks
   const allPosts = getAllBlogPosts?.() || []
-  const featuredPosts = getFeaturedBlogPosts?.() || []
   const recentPosts = allPosts.slice(0, 6)
 
   // console.log('Blog posts found:', allPosts.length)
-  // console.log('Featured posts:', featuredPosts.length)
 
   return (
     <div className="min-h-screen bg-background">
@@ -110,92 +105,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Featured Posts */}
-      {featuredPosts.length > 0 ? (
-        <section className="section-padding bg-gradient-to-b from-slate-50 to-white">
-          <div className="container-wide">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-accent/10 rounded-full px-4 py-2 mb-4">
-                <span className="text-sm font-semibold text-accent">⭐ Featured</span>
-              </div>
-              <h2 className="text-4xl font-bold text-foreground mb-4">
-                Must-Read Articles
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Our most popular and impactful content to help grow your trucking business
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              {featuredPosts.slice(0, 2).map((post: any) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group block"
-                >
-                  <article className="bg-card rounded-2xl card-elevation-lg overflow-hidden border border-border hover:border-accent/30 transition-all duration-500 transform hover:-translate-y-1">
-                    <div className="relative h-72 overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.imageAlt || post.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-accent text-accent-foreground font-semibold">
-                          Featured
-                        </Badge>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                      
-                      <div className="absolute bottom-6 left-6 right-6 text-white">
-                        <h3 className="text-2xl font-bold mb-3 leading-tight">{post.title}</h3>
-                        <p className="text-gray-200 leading-relaxed line-clamp-2">{post.description}</p>
-                      </div>
-                    </div>
-
-                    <div className="p-8">
-                      <div className="flex items-center justify-between mb-6">
-                        <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-200">
-                          {post.category}
-                        </Badge>
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                          <div className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            <span>{post.readingTime} min read</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{formatDate(post.publishedAt)}</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          {/* Consider adding author image if available */}
-                          {/* {post.authorImage && (
-                            <Image src={post.authorImage} alt={post.author} width={40} height={40} className="rounded-full" />
-                          )} */}
-                          <div>
-                            <p className="font-medium text-foreground">{post.author}</p>
-                            <p className="text-sm text-muted-foreground">Marketing Expert</p> {/* Or a more dynamic role */}
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center text-accent font-semibold group-hover:text-accent/80 transition-colors">
-                          <span>Read More</span>
-                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
 
       {/* Recent Posts Grid */}
       <section className="section-padding bg-gray-50">
