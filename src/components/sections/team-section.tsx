@@ -3,12 +3,6 @@ import Image from 'next/image';
 
 const teamMembers = [
   {
-    name: "Katie Griggs",
-    role: "Founder / CEO",
-    description: "With 20 years' experience in marketing and strategy development, Katie's passion is finding innovative and creative solutions for clients. Describing herself as a results-driven hustler with a hidden creative side, she leads our dynamic team and takes things to the next level.",
-    imageUrl: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748309381/Katie_xjksdj.png" // Replace with actual Cloudinary URL
-  },
-  {
     name: "Nicolas Fenton",
     role: "Account Manager",
     description: "Nic Fenton is an experienced Account Manager with a keen eye for detail and a passion for delivering exceptional client experiences. Known for building strong relationships, Nic ensures seamless project execution while always keeping clients' goals at the forefront.",
@@ -25,12 +19,6 @@ const teamMembers = [
     role: "Web Developer",
     description: "With over a decade of experience in web design and development, Dasun has collaborated with multinational agencies to create impactful digital solutions. Beyond coding, Dasun specialises in optimising user journeys and conversions, turning websites into powerful tools for businesses.",
     imageUrl: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748309381/Dasun_javj88.png" // Replace with actual Cloudinary URL
-  },
-  {
-    name: "Dinithi Dias",
-    role: "Digital Advertising Specialist",
-    description: "A Meta and Google Certified Digital Marketing Professional with over five years of experience, Dinithi excels in driving brand growth and e-commerce success. With a proven track record of managing digital strategies for multinational and local brands, Dinithi specialises in innovative, data-driven solutions. Their expertise spans SEO, SEM, PPC, and social media marketing, creating impactful campaigns that enhance online presence and drive sales.",
-    imageUrl: "https://res.cloudinary.com/dvwug91mb/image/upload/v1748309382/Dinithi_agpuuo.jpg" // Replace with actual Cloudinary URL
   },
   {
     name: "Coral Barclay",
