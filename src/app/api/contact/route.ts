@@ -2,9 +2,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-// Initialize Resend with your API key
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 // Type for the form data
 interface ContactFormData {
   name: string
@@ -58,6 +55,7 @@ const createEmailTemplate = (data: ContactFormData): string => {
 
 export async function POST(request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     const data: ContactFormData = await request.json()
     
     // Validate required fields

@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     const body = await request.json()
     
     const { subject, html, text, name } = body
@@ -53,8 +52,9 @@ export async function POST(request: NextRequest) {
 }
 
 // Get list of broadcasts
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     const { data, error } = await resend.broadcasts.list()
     
     if (error) {
@@ -67,8 +67,7 @@ export async function GET(request: NextRequest) {
     
     return NextResponse.json(
       { 
-        broadcasts: data,
-        count: data?.length || 0
+        broadcasts: data
       },
       { status: 200 }
     )
